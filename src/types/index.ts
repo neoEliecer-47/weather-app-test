@@ -7,5 +7,5 @@ interface countries {
   name: {
     common: string;
   };
-  latlgn: number[];
+  latlng: number[];
 }
