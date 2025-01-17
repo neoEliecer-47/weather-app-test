@@ -1,5 +1,5 @@
 import { widgetInfo } from "@/constants";
-import { countries, updateWidgetDataProps } from "@/types";
+import { updateWidgetDataProps } from "@/types";
 
 export async function fetchCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -8,7 +8,7 @@ export async function fetchCountries() {
 }
 
 export async function fetchWeatherCountry(params: { lat: string, lon: string }) {
-  console.log({p: params})
+  
   const { lat, lon } = params
   
   try {
@@ -21,7 +21,7 @@ export async function fetchWeatherCountry(params: { lat: string, lon: string }) 
 }
 
 export async function updateWidgetData(weatherData: updateWidgetDataProps){
-    console.log(weatherData)
+    
     for (const property of widgetInfo){
         if(weatherData){
             property.temperature = weatherData.current?.temp

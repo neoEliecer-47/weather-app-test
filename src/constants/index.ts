@@ -11,3 +11,8 @@ export const widgetInfo: widgetInfoProps[] = [
     { title: 'humidity', imgSrc: humidityImg, humidity: '' },
     { title: 'pressure', imgSrc: pressureImg, pressure: '' },
   ]
+
+  export const paramsFirstRender = { //Malta latitude and longitude
+    lat: '35.9375',
+    lon: '14.3754'
+  }

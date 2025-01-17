@@ -1,20 +1,21 @@
 import DropDownMenuCountries from "@/components/DropDownMenuCountries";
 import countriesAllowedData from "../mock/Countries.json";
-import WeatherWidget from "@/components/WeatherWidget";
 
 import { fetchWeatherCountry, updateWidgetData } from "@/utils";
 import { searchParamsProps } from "@/types";
+import { paramsFirstRender } from "@/constants";
+import TemperatureWidget from "@/components/weather-variables/TemperatureWidget";
+import WindWidget from "@/components/weather-variables/WindWidget";
+import HumidityWidget from "@/components/weather-variables/HumidityWidget";
+import PressureWidget from "@/components/weather-variables/PressureWidget";
 
-const paramsFirstRender = {
-  lat: '35.9375',
-  lon: '14.3754'
-}
+//server component
 
 export default async function Home({ searchParams }: searchParamsProps) {
   const paramsSearch = await searchParams;
-  const params = !paramsSearch ? paramsFirstRender : paramsSearch
-  const countriesData = await fetchWeatherCountry(params)
-  const data = await updateWidgetData(countriesData);
+  const params = !paramsSearch.lat ? paramsFirstRender : paramsSearch
+  const countryWeatherData = await fetchWeatherCountry(params)
+  const data = await updateWidgetData(countryWeatherData);
 
   return (
     <div className="h-full w-full p-1 font-[family-name:var(--font-geist-sans)]">
@@ -22,15 +23,13 @@ export default async function Home({ searchParams }: searchParamsProps) {
         countries={countriesAllowedData}
         placeholder="Select country"
       />
-      {data.map(({ title, imgSrc, temperature, humidity, pressure, wind }) => (
-        <WeatherWidget
-          title={title}
-          imgSrc={imgSrc}
-          temperature={temperature}
-          humidity={humidity}
-          pressure={pressure}
-          wind={wind}
-        />
+      {data.map((data) => (
+        <>
+          <TemperatureWidget temperature={data.temperature}/>
+          <WindWidget windSpeed={data.wind}/>
+          <HumidityWidget humidity={data.humidity}/>
+          <PressureWidget pressure={data.pressure}/>
+        </>
       ))}
     </div>
   );
