@@ -6,8 +6,8 @@ import { widgetInfoProps } from '@/types'
 
 
 export const widgetInfo: widgetInfoProps[] = [
-    { title: 'temperature', imgSrc: temperatureImg, temperature: 0 },
-    { title: 'wind', imgSrc: windImg, wind: 0 },
-    { title: 'humidity', imgSrc: humidityImg, humidity: 0 },
-    { title: 'pressure', imgSrc: pressureImg, pressure: 0 },
+    { title: 'temperature', imgSrc: temperatureImg, temperature: '' },
+    { title: 'wind', imgSrc: windImg, wind: '' },
+    { title: 'humidity', imgSrc: humidityImg, humidity: '' },
+    { title: 'pressure', imgSrc: pressureImg, pressure: '' },
   ]

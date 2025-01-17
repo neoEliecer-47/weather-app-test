@@ -6,10 +6,10 @@ export type DropDownMenuCountriesProps = {
 };
 
 export type widgetInfoProps = baseWidgetProperty & {
-  [K in lastPropertyName]?: number;
+  [K in lastPropertyName]?: string;
 };
 
-interface countries {
+export interface countries {
   name: {
     common: string;
   };
@@ -22,3 +22,21 @@ interface baseWidgetProperty {
 }
 
 type lastPropertyName = "temperature" | "wind" | "humidity" | "pressure";
+
+export type searchParamsProps = {
+  searchParams: Promise<params>
+}
+
+interface params {
+  lat: string;
+  lon: string;
+}
+
+export type updateWidgetDataProps = {
+  current : {
+    temp: string;
+    pressure: string;
+    humidity: string;
+    wind_speed: string;
+  }
+}

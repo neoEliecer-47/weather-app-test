@@ -2,7 +2,8 @@
 
 import { useClickOutsideDetector } from "@/hooks/useClickOutside";
 import { DropDownMenuCountriesProps } from "@/types";
-import { CheckIcon } from "@heroicons/react/24/solid";
+import { updateSearchParams } from "@/utils";
+import { useRouter } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -17,9 +18,14 @@ const DropDownMenuCountries = ({
   const [searchTerm, setSearchTerm] = useState("");
   const { dropMenuRef, isClickOutside, setIsClickOutside } =
     useClickOutsideDetector();
+  const router = useRouter()
 
-  function buildLatitudeAndLongitude(countryIndex: number) {
-    const latlgn = countries[countryIndex]?.latlng;
+  function buildLatitudeAndLongitude(latlon: number[]) {
+   
+    const lat = latlon[0]
+    const lon = latlon[1]
+    const newPathname = updateSearchParams('lat', lat, 'lon', lon);
+    router.push(newPathname)
   }
 
   //filter countries based on searchTerm
@@ -71,13 +77,13 @@ const DropDownMenuCountries = ({
           }}
         >
           {
-            filteredCountries().map(({ name }, index) => {
+            filteredCountries().map(({ name, latlng }, index) => {
               return (
                 <div
                   key={index}
                   onClick={() => {
                     setCountryIndex(index);
-                    buildLatitudeAndLongitude(index);
+                    buildLatitudeAndLongitude(latlng);
                     setSelectedCountry(name.common);
                   }}
                   className="bg-white m-0 flex justify-between items-center"
