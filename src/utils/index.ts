@@ -9,7 +9,7 @@ export async function fetchCountries() {
 export async function fetchWeather() {
   try {
     const res = await fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=35.9375&lon=14.3754&units=imperial&appid=1c11fda5c8d4123410a24c8e93bff0c7`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=35.9375&lon=14.3754&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const data = await res.json()
     return data;
