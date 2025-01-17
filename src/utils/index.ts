@@ -21,7 +21,7 @@ export async function updateWidgetData(){
     for (const property of widgetInfo){
         if(weatherData){
             property.temperature = weatherData.current.temp
-            property.wind = weatherData.wind_speed
+            property.wind = weatherData.current.wind_speed
             property.humidity = weatherData.current.humidity
             property.pressure = weatherData.current.pressure
         }
