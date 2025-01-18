@@ -4,6 +4,7 @@ import { updateWidgetVariable } from "@/utils"
 import WidgetWrapper from "../WidgetWrapper"
 import { useState } from "react"
 import { useUpdateWidget } from "@/hooks/useUpdateWidget"
+import { CustomWidgetButton } from "../CustomWidgetButton"
 
 type WindWidgetProps = {
     windSpeed?: string
@@ -25,7 +26,7 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
          </div>
          <h1 className="p-0 m-0">Wind</h1>
          <span>{windSpeed}</span>
-         <button className='p-5 bg-slate-50 text-black' onClick={()=> setWidgetType('wind_speed')}>Update Wind Speed</button>
+         <CustomWidgetButton text="update wind" widgetType="wind_speed" setWidgetType={setWidgetType}/>
     </WidgetWrapper>
   )
 }

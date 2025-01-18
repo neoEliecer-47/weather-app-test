@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import React from "react";
 
 export type DropDownMenuCountriesProps = {
   placeholder: string;
@@ -48,4 +49,10 @@ export type widgetWrapperProps = baseWidgetProperty & {
   wind: string;
 
 
+}
+
+export type CustomWidgetButtonProps = {
+  text: string,
+  widgetType: string,
+  setWidgetType: React.Dispatch<React.SetStateAction<string>>
 }

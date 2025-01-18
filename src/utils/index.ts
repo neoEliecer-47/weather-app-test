@@ -1,3 +1,5 @@
+import { paramsFirstRender } from "@/constants";
+
 
 
 export async function fetchCountries() {
@@ -6,43 +8,64 @@ export async function fetchCountries() {
   return data;
 }
 
-export async function fetchWeatherCountry(params: { lat: string, lon: string }) {
+export async function fetchWeatherCountry(
+  params: { lat: string; lon: string },
   
-  const { lat, lon } = params
-  
+) {
+  // if (firstRender) {
+  //   firstRenderCountryPath()
+  // }
+  const { lat, lon } = params;
+
   try {
     const res = await fetch(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`
     );
-    const data = await res.json()
-   
-    return data
+    const data = await res.json();
+
+    return data;
   } catch (error) {}
 }
 
-
-export function updateSearchParams(type: string, value:number, typeTwo: string, valueTwo: number){
+export function updateSearchParams(
+  type: string,
+  value: number,
+  typeTwo: string,
+  valueTwo: number
+) {
   const searchParams = new URLSearchParams(window.location.search);
-  
+
   searchParams.set(type, value.toString().toLocaleLowerCase());
   searchParams.set(typeTwo, valueTwo.toString().toLocaleLowerCase());
+ 
 
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
 }
 
-export async function updateWidgetVariable(){
+export async function updateWidgetVariable() {
   try {
     const searchParams = new URLSearchParams(window.location.search);
-    const lat = searchParams.get('lat');
-    const lon = searchParams.get('lon')
-    const data = await fetch(`/api/weather?lat=${lat}&lon=${lon}`)
-    const weatherUpdateData = await data.json()
-    return weatherUpdateData
+    const lat = searchParams.get("lat");
+    const lon = searchParams.get("lon");
+    const data = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+    const weatherUpdateData = await data.json();
+    return weatherUpdateData;
   } catch (error: unknown) {
-    if(error instanceof Error){
-      console.error('something happened trying to update the widget data', error.message)
+    if (error instanceof Error) {
+      console.error(
+        "something happened trying to update the widget data",
+        error.message
+      );
     }
   }
 }
+
+// function firstRenderCountryPath(){
+//   const { lat, lon } = paramsFirstRender
+//   console.log('asdas')
+//   const firstCountryPathName = updateSearchParams('lat', lat, 'lon', lon)
+//   //redirect(firstCountryPathName)
+
+// }

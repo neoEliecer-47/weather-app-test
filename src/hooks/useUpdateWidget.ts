@@ -1,12 +1,12 @@
 import { updateWidgetVariable } from "@/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export function useUpdateWidget(widgetType: string) {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<string>("");
 
   async function handleUpdate() {
-    //server handler route
+    if (!widgetType) return;
     setLoading(true);
     try {
       const widgetUpdatedVariableData = await updateWidgetVariable();
@@ -19,7 +19,7 @@ export function useUpdateWidget(widgetType: string) {
     }
   }
 
-  useEffect(() => {
+  useMemo(() => {//for better performance and avoid re-renders
     handleUpdate();
   }, [widgetType]);
 
