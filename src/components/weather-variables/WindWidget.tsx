@@ -17,15 +17,20 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
   const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
 
-
+  function changeWindMphToKh(){/// I do this calculation since the units from the api come in mph units
+    const windString = widgetType ? data : windSpeed
+    const windNumber = Number(windString)
+    const windValueKH = String((windNumber * 1.6).toFixed(2))
+    return windValueKH
+  }
 
   return (
     <WidgetWrapper>
       <WidgetData
         widgetName="wind speed"
         imgSrc={imgWid}
-        unit="°C"
-        variableValue={!widgetType ? windSpeed : data}
+        unit="km/h"
+        variableValue={changeWindMphToKh()}
         loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">

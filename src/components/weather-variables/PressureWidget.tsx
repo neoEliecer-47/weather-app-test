@@ -20,7 +20,7 @@ const PressureWidget = ({ pressure }: PressureWidgetProps) => {
       <WidgetData
         widgetName="pressure"
         imgSrc={imgPressure}
-        unit="C"
+        unit="mb"
         variableValue={!widgetType ? pressure : data}
         loading={loading}
       />

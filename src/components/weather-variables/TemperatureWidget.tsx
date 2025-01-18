@@ -15,13 +15,21 @@ type TemperatureWidgetProps = {
 const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
   const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
+
+  function changeTempFahToCelcius(){// I do this calculation since the units from the api come in Fahrenheid units
+    const tempString = widgetType ? data : temperature
+    const tempNumber = Number(tempString)
+    const tempValueCelcius = String(((tempNumber - 32) * 5/9).toFixed(2))
+    return tempValueCelcius
+  }
+
   return (
     <WidgetWrapper>
       <WidgetData
         widgetName="temperature"
         imgSrc={imgTempeture}
-        unit="C"
-        variableValue={!widgetType ? temperature : data}
+        unit="°C"
+        variableValue={changeTempFahToCelcius()}
         loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">

@@ -13,7 +13,6 @@ const DropDownMenuCountries = ({
 }: DropDownMenuCountriesProps) => {
   const countriesRef = useRef<HTMLUListElement | null>(null)
   const [isOpen, setIsOpen] = useState(false);
-  const [countryIndex, setCountryIndex] = useState<number | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const { dropMenuRef, isClickOutside, setIsClickOutside } =
@@ -40,6 +39,13 @@ const DropDownMenuCountries = ({
     return filterCountry;
   }
 
+
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>){
+    const sanitizedValue = event.target.value.replace(/[^a-z]/g,'')//to only allow letters in the input
+    setSearchTerm(sanitizedValue)
+  }
+
   useEffect(() => {
     if (isClickOutside) {
       setIsOpen(false);
@@ -51,11 +57,11 @@ const DropDownMenuCountries = ({
     <div className="flex flex-col justify-center items-center">
       <input
         value={searchTerm}
-        onChange={(e) => {
-          setSearchTerm(e.target.value);
-        }}
+        onChange={handleChange}
         className="p-2 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem]"
         onClick={() => setIsOpen(true)}
+        
+        
       />
       <section
         className="cursor-pointer p-0 mt-2"
@@ -82,7 +88,6 @@ const DropDownMenuCountries = ({
                 <div
                   key={index}
                   onClick={() => {
-                    setCountryIndex(index);
                     buildLatitudeAndLongitude(latlng, name.common);
                     setSelectedCountry(name.common);
                   }}

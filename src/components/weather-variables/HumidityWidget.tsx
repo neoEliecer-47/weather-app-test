@@ -20,7 +20,7 @@ const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
       <WidgetData
         widgetName="humidity"
         imgSrc={imgHumidity}
-        unit="C"
+        unit="%"
         variableValue={!widgetType ? humidity : data}
         loading={loading}
       />

@@ -11,7 +11,7 @@ const WidgetData = ({ widgetName, imgSrc, unit, variableValue, loading }: widget
         <section className="flex flex-col justify-center items-center p-0">
             <h2 className="p-0">{widgetName}</h2>
            {!loading && (
-             <span className="p-0">{variableValue} - {unit}</span>
+             <span className="p-0">{variableValue}  {unit}</span>
            )}
         </section>
     </div>
