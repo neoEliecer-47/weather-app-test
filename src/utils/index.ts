@@ -1,5 +1,4 @@
-import { widgetInfo } from "@/constants";
-import { updateWidgetDataProps } from "@/types";
+
 
 export async function fetchCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -16,22 +15,11 @@ export async function fetchWeatherCountry(params: { lat: string, lon: string }) 
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const data = await res.json()
-    return data;
+   
+    return data
   } catch (error) {}
 }
 
-export async function updateWidgetData(weatherData: updateWidgetDataProps){
-    
-    for (const property of widgetInfo){
-        if(weatherData){
-            property.temperature = weatherData.current?.temp
-            property.wind = weatherData.current?.wind_speed
-            property.humidity = weatherData.current?.humidity
-            property.pressure = weatherData.current?.pressure
-        }
-    }
-    return widgetInfo
-}
 
 export function updateSearchParams(type: string, value:number, typeTwo: string, valueTwo: number){
   const searchParams = new URLSearchParams(window.location.search);
@@ -42,4 +30,14 @@ export function updateSearchParams(type: string, value:number, typeTwo: string, 
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
+}
+
+export async function updateWidgetVariable(widgetType: string){
+  try {
+    const res = await fetch(`/api/weather?variable=${widgetType}`)
+    const data = await res.json()
+    return data
+  } catch (error) {
+    
+  }
 }

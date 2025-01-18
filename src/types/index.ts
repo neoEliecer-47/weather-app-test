@@ -40,3 +40,12 @@ export type updateWidgetDataProps = {
     wind_speed: string;
   }
 }
+
+export type widgetWrapperProps = baseWidgetProperty & {
+  temperature: string;
+  humidity: string;
+  pressure: string;
+  wind: string;
+
+
+}

@@ -1,7 +1,7 @@
 import DropDownMenuCountries from "@/components/DropDownMenuCountries";
 import countriesAllowedData from "../mock/Countries.json";
 
-import { fetchWeatherCountry, updateWidgetData } from "@/utils";
+import { fetchWeatherCountry } from "@/utils";
 import { searchParamsProps } from "@/types";
 import { paramsFirstRender } from "@/constants";
 import TemperatureWidget from "@/components/weather-variables/TemperatureWidget";
@@ -13,24 +13,22 @@ import PressureWidget from "@/components/weather-variables/PressureWidget";
 
 export default async function Home({ searchParams }: searchParamsProps) {
   const paramsSearch = await searchParams;
-  const params = !paramsSearch.lat ? paramsFirstRender : paramsSearch
-  const countryWeatherData = await fetchWeatherCountry(params)
-  const data = await updateWidgetData(countryWeatherData);
-
+  const params = !paramsSearch.lat ? paramsFirstRender : paramsSearch;
+  const countryWeatherData = await fetchWeatherCountry(params);
+  const { temp, wind_speed, pressure, humidity } = countryWeatherData.current;
+  
   return (
     <div className="h-full w-full p-1 font-[family-name:var(--font-geist-sans)]">
       <DropDownMenuCountries
         countries={countriesAllowedData}
         placeholder="Select country"
       />
-      {data.map((data) => (
-        <>
-          <TemperatureWidget temperature={data.temperature}/>
-          <WindWidget windSpeed={data.wind}/>
-          <HumidityWidget humidity={data.humidity}/>
-          <PressureWidget pressure={data.pressure}/>
-        </>
-      ))}
+      <section>
+        <TemperatureWidget temperature={temp} />
+        <WindWidget windSpeed={wind_speed} />
+        <HumidityWidget humidity={humidity} />
+        <PressureWidget pressure={pressure} />
+      </section>
     </div>
   );
 }

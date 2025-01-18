@@ -7,7 +7,8 @@ type HumidityWidgetProps = {
 const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
   return (
     <WidgetWrapper>
-        <h1>{humidity}</h1>
+        <h1 className="p-0 m-0">humidity</h1>
+        <span>{humidity}</span>
     </WidgetWrapper>
   )
 }

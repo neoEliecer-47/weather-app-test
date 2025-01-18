@@ -1,5 +1,7 @@
 import WidgetWrapper from "../WidgetWrapper"
 
+
+
 type TemperatureWidgetProps = {
     temperature?: string
 }
@@ -7,7 +9,8 @@ type TemperatureWidgetProps = {
 const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   return (
     <WidgetWrapper>
-        <h1>{temperature}</h1>
+        <h1 className="p-0 m-0">temperature</h1>
+        <span>{temperature}</span>
     </WidgetWrapper>
   )
 }

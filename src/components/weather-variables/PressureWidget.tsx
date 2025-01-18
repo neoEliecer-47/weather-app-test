@@ -7,7 +7,8 @@ type PressureWidgetProps = {
 const PressureWidget = ({ pressure }: PressureWidgetProps) => {
   return (
     <WidgetWrapper>
-        <h1>{pressure}</h1>
+        <h1 className="p-0 m-0">pressure</h1>
+        <span>{pressure}</span>
     </WidgetWrapper>
   )
 }
