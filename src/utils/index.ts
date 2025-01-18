@@ -32,12 +32,17 @@ export function updateSearchParams(type: string, value:number, typeTwo: string, 
   return newPathname;
 }
 
-export async function updateWidgetVariable(widgetType: string){
+export async function updateWidgetVariable(){
   try {
-    const res = await fetch(`/api/weather?variable=${widgetType}`)
-    const data = await res.json()
-    return data
-  } catch (error) {
-    
+    const searchParams = new URLSearchParams(window.location.search);
+    const lat = searchParams.get('lat');
+    const lon = searchParams.get('lon')
+    const data = await fetch(`/api/weather?lat=${lat}&lon=${lon}`)
+    const weatherUpdateData = await data.json()
+    return weatherUpdateData
+  } catch (error: unknown) {
+    if(error instanceof Error){
+      console.error('something happened trying to update the widget data', error.message)
+    }
   }
 }
