@@ -15,9 +15,8 @@ type WindWidgetProps = {
 
 const WindWidget = ({ windSpeed }: WindWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
-  const { data, loading } = useUpdateWidget(widgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
 
-console.log(data)
 
 
   return (
@@ -25,8 +24,9 @@ console.log(data)
       <WidgetData
         widgetName="wind speed"
         imgSrc={imgWid}
-        unit="C"
+        unit="°C"
         variableValue={!widgetType ? windSpeed : data}
+        loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">
         {loading ? (

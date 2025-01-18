@@ -14,7 +14,7 @@ type HumidityWidgetProps = {
 
 const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
-  const { data, loading } = useUpdateWidget(widgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
   return (
     <WidgetWrapper>
       <WidgetData
@@ -22,6 +22,7 @@ const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
         imgSrc={imgHumidity}
         unit="C"
         variableValue={!widgetType ? humidity : data}
+        loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">
         {loading ? (

@@ -63,4 +63,5 @@ export type widgetData = {
   imgSrc: StaticImageData;
   unit: string;
   variableValue?: string;
+  loading: boolean;
 }

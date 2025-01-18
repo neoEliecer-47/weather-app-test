@@ -16,7 +16,10 @@ export async function fetchWeatherCountry(//function to fetch countries current 
     const res = await fetch(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`, {
         method: 'GET',
-        'cache': 'no-cache',
+       headers: {
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache'
+       }
       }
     );
     const data = await res.json();

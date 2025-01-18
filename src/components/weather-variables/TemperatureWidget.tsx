@@ -14,7 +14,7 @@ type TemperatureWidgetProps = {
 
 const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
-  const { data, loading } = useUpdateWidget(widgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
   return (
     <WidgetWrapper>
       <WidgetData
@@ -22,6 +22,7 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
         imgSrc={imgTempeture}
         unit="C"
         variableValue={!widgetType ? temperature : data}
+        loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">
         {loading ? (

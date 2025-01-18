@@ -14,7 +14,7 @@ type PressureWidgetProps = {
 
 const PressureWidget = ({ pressure }: PressureWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
-  const { data, loading } = useUpdateWidget(widgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
   return (
     <WidgetWrapper>
       <WidgetData
@@ -22,6 +22,7 @@ const PressureWidget = ({ pressure }: PressureWidgetProps) => {
         imgSrc={imgPressure}
         unit="C"
         variableValue={!widgetType ? pressure : data}
+        loading={loading}
       />
       <div className="p-0 m-0 flex justify-center items-center">
         {loading ? (

@@ -1,7 +1,7 @@
 import { updateWidgetVariable } from "@/utils";
-import { useEffect, useMemo, useState } from "react";
+import React, { SetStateAction, useEffect, useMemo, useState } from "react";
 
-export function useUpdateWidget(widgetType: string) {
+export function useUpdateWidget(widgetType: string, setWidgetType: React.Dispatch<SetStateAction<string>>) {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<string>("");
 
@@ -10,8 +10,10 @@ export function useUpdateWidget(widgetType: string) {
     setLoading(true);
     try {
       const widgetUpdatedVariableData = await updateWidgetVariable();
-      setData(widgetUpdatedVariableData.current[widgetType]);
       setLoading(false);
+      setWidgetType('')
+      setData(widgetUpdatedVariableData.current[widgetType]);
+      
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error("error getting the data from hook", error.message);
@@ -19,7 +21,7 @@ export function useUpdateWidget(widgetType: string) {
     }
   }
 
-  useMemo(() => {//for better performance and avoid re-renders
+  useEffect(() => {
     handleUpdate();
   }, [widgetType]);
 
