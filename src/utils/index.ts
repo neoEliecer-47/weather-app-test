@@ -1,25 +1,23 @@
-import { paramsFirstRender } from "@/constants";
 
 
-
-export async function fetchCountries() {
+export async function fetchCountries() {//countries allowed
   const response = await fetch("https://restcountries.com/v3.1/all");
   const data = await response.json();
   return data;
 }
 
-export async function fetchWeatherCountry(
+export async function fetchWeatherCountry(//function to fetch countries current weather data
   params: { lat: string; lon: string },
-  
 ) {
-  // if (firstRender) {
-  //   firstRenderCountryPath()
-  // }
+
   const { lat, lon } = params;
 
   try {
     const res = await fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`, {
+        method: 'GET',
+        'cache': 'no-cache',
+      }
     );
     const data = await res.json();
 
@@ -27,16 +25,19 @@ export async function fetchWeatherCountry(
   } catch (error) {}
 }
 
-export function updateSearchParams(
+export function updateSearchParams(//function which is used from the client side
   type: string,
   value: number,
   typeTwo: string,
-  valueTwo: number
+  valueTwo: number,
+  typeTree: string,
+  valueTree: string,
 ) {
   const searchParams = new URLSearchParams(window.location.search);
 
   searchParams.set(type, value.toString().toLocaleLowerCase());
   searchParams.set(typeTwo, valueTwo.toString().toLocaleLowerCase());
+  searchParams.set(typeTree, valueTree.toString().toLocaleLowerCase());
  
 
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
@@ -44,7 +45,7 @@ export function updateSearchParams(
   return newPathname;
 }
 
-export async function updateWidgetVariable() {
+export async function updateWidgetVariable() {//function to update one single widget from the client
   try {
     const searchParams = new URLSearchParams(window.location.search);
     const lat = searchParams.get("lat");
@@ -61,11 +62,3 @@ export async function updateWidgetVariable() {
     }
   }
 }
-
-// function firstRenderCountryPath(){
-//   const { lat, lon } = paramsFirstRender
-//   console.log('asdas')
-//   const firstCountryPathName = updateSearchParams('lat', lat, 'lon', lon)
-//   //redirect(firstCountryPathName)
-
-// }

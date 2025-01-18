@@ -1,16 +1,41 @@
-import WidgetWrapper from "../WidgetWrapper"
+"use client";
+
+import { useState } from "react";
+import { CustomWidgetButton } from "../CustomWidgetButton";
+import Loader from "../Loader";
+import WidgetData from "../WidgetData";
+import WidgetWrapper from "../WidgetWrapper";
+import { useUpdateWidget } from "@/hooks/useUpdateWidget";
+import imgPressure from "../../../public/assets/pressure.png";
 
 type PressureWidgetProps = {
-    pressure?: string
-}
+  pressure?: string;
+};
 
 const PressureWidget = ({ pressure }: PressureWidgetProps) => {
+  const [widgetType, setWidgetType] = useState("");
+  const { data, loading } = useUpdateWidget(widgetType);
   return (
     <WidgetWrapper>
-        <h1 className="p-0 m-0">pressure</h1>
-        <span>{pressure}</span>
+      <WidgetData
+        widgetName="pressure"
+        imgSrc={imgPressure}
+        unit="C"
+        variableValue={!widgetType ? pressure : data}
+      />
+      <div className="p-0 m-0 flex justify-center items-center">
+        {loading ? (
+          <Loader />
+        ) : (
+          <CustomWidgetButton
+            text="update pressure"
+            widgetType="pressure"
+            setWidgetType={setWidgetType}
+          />
+        )}
+      </div>
     </WidgetWrapper>
-  )
-}
+  );
+};
 
-export default PressureWidget
+export default PressureWidget;

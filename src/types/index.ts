@@ -31,6 +31,7 @@ export type searchParamsProps = {
 interface params {
   lat: string;
   lon: string;
+  country: string;
 }
 
 export type updateWidgetDataProps = {
@@ -55,4 +56,11 @@ export type CustomWidgetButtonProps = {
   text: string,
   widgetType: string,
   setWidgetType: React.Dispatch<React.SetStateAction<string>>
+}
+
+export type widgetData = {
+  widgetName: string;
+  imgSrc: StaticImageData;
+  unit: string;
+  variableValue?: string;
 }

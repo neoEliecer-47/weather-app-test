@@ -20,11 +20,11 @@ const DropDownMenuCountries = ({
     useClickOutsideDetector();
   const router = useRouter()
 
-  function buildLatitudeAndLongitude(latlon: number[]) {
+  function buildLatitudeAndLongitude(latlon: number[], country: string) {
    
     const lat = latlon[0]
     const lon = latlon[1]
-    const newPathname = updateSearchParams('lat', lat, 'lon', lon);
+    const newPathname = updateSearchParams('lat', lat, 'lon', lon, 'country', country);
     router.push(newPathname)
   }
 
@@ -54,16 +54,16 @@ const DropDownMenuCountries = ({
         onChange={(e) => {
           setSearchTerm(e.target.value);
         }}
-        className="p-4 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem]"
+        className="p-2 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem]"
         onClick={() => setIsOpen(true)}
       />
       <section
-        className="cursor-pointer p-0"
+        className="cursor-pointer p-0 mt-2"
         ref={dropMenuRef}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
-          {selectedCountry ? selectedCountry : placeholder}
+        <div className="capitalize relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
+          {placeholder}
         </div>
 
         <ul
@@ -83,7 +83,7 @@ const DropDownMenuCountries = ({
                   key={index}
                   onClick={() => {
                     setCountryIndex(index);
-                    buildLatitudeAndLongitude(latlng);
+                    buildLatitudeAndLongitude(latlng, name.common);
                     setSelectedCountry(name.common);
                   }}
                   className="bg-white m-0 flex justify-between items-center"
