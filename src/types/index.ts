@@ -67,3 +67,10 @@ export type widgetData = {
   loading: boolean;
   color: string;
 }
+
+export type widgetSwitchUnitsProps = {
+  currentUnit: boolean,
+  setCurrentUnit: React.Dispatch<React.SetStateAction<boolean>>,
+  unitValueOne: string,
+  unitValueTwo: string;
+}

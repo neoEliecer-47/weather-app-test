@@ -8,6 +8,7 @@ import { CustomWidgetButton } from "../CustomWidgetButton";
 import Loader from "../Loader";
 import WidgetData from "../WidgetData";
 import imgWid from "../../../public/assets/wind.png";
+import WidgetSwitchUnits from "../WidgetSwitchUnits";
 
 type WindWidgetProps = {
   windSpeed?: string;
@@ -15,13 +16,15 @@ type WindWidgetProps = {
 
 const WindWidget = ({ windSpeed }: WindWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
+  const [mphUnit, setMphUnit] = useState(false)
   const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
 
   function changeWindMphToKh() {
     /// I do this calculation since the units from the api come in mph units
+    
     const windString = widgetType ? data : windSpeed;
     const windNumber = Number(windString);
-    const windValueKH = String((windNumber * 1.6).toFixed(2));
+    const windValueKH = String((windNumber * 1.6).toFixed(1));
     return windValueKH;
   }
 
@@ -30,18 +33,21 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
       <WidgetData
         widgetName="wind speed"
         imgSrc={imgWid}
-        unit="km/h"
-        variableValue={changeWindMphToKh()}
+        unit={mphUnit === false ? 'km/h' : 'mph'}
+        variableValue={mphUnit === false ? changeWindMphToKh() : windSpeed}
         loading={loading}
         color="blue"
       />
-
+      <div className="flex h-8 items-center justify-start gap-[6.1rem]">
+      <WidgetSwitchUnits currentUnit={mphUnit} setCurrentUnit={setMphUnit} unitValueOne="km/h" unitValueTwo="mph"/>
       <CustomWidgetButton
         text="update wind"
         widgetType="wind_speed"
         setWidgetType={setWidgetType}
         loading={loading}
       />
+      </div>
+     
     </WidgetWrapper>
   );
 };
