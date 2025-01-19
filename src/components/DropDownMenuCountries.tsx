@@ -95,7 +95,7 @@ const DropDownMenuCountries = ({
                   buildLatitudeAndLongitude(latlng, name.common);
                   setSelectedCountry(name.common);
                 }}
-                className="bg-white m-0 flex justify-between items-center"
+                className="bg-white m-0 flex justify-between items-center md:hover:bg-red-100 transition-all"
               >
                 <li
                   className={`${

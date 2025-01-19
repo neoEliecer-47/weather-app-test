@@ -25,17 +25,13 @@ const PressureWidget = ({ pressure }: PressureWidgetProps) => {
         loading={loading}
         color="gray"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
-        {loading ? (
-          <Loader />
-        ) : (
-          <CustomWidgetButton
-            text="update pressure"
-            widgetType="pressure"
-            setWidgetType={setWidgetType}
-          />
-        )}
-      </div>
+
+      <CustomWidgetButton
+        text="update pressure"
+        widgetType="pressure"
+        setWidgetType={setWidgetType}
+        loading={loading}
+      />
     </WidgetWrapper>
   );
 };

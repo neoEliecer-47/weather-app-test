@@ -17,11 +17,12 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
   const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
 
-  function changeWindMphToKh(){/// I do this calculation since the units from the api come in mph units
-    const windString = widgetType ? data : windSpeed
-    const windNumber = Number(windString)
-    const windValueKH = String((windNumber * 1.6).toFixed(2))
-    return windValueKH
+  function changeWindMphToKh() {
+    /// I do this calculation since the units from the api come in mph units
+    const windString = widgetType ? data : windSpeed;
+    const windNumber = Number(windString);
+    const windValueKH = String((windNumber * 1.6).toFixed(2));
+    return windValueKH;
   }
 
   return (
@@ -34,17 +35,13 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
         loading={loading}
         color="blue"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
-        {loading ? (
-          <Loader />
-        ) : (
-          <CustomWidgetButton
-            text="update wind"
-            widgetType="wind_speed"
-            setWidgetType={setWidgetType}
-          />
-        )}
-      </div>
+
+      <CustomWidgetButton
+        text="update wind"
+        widgetType="wind_speed"
+        setWidgetType={setWidgetType}
+        loading={loading}
+      />
     </WidgetWrapper>
   );
 };

@@ -16,12 +16,13 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
   const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
 
-  function changeTempFahToCelcius(){// I do this calculation since the units from the api come in Fahrenheid units
-    const tempString = widgetType ? data : temperature
-    const tempNumber = Number(tempString)
-    console.log({TTT: tempNumber})
-    const tempValueCelcius = String(((tempNumber - 32) * 5/9).toFixed(1))
-    return tempValueCelcius
+  function changeTempFahToCelcius() {
+    // I do this calculation since the units from the api come in Fahrenheid units
+    const tempString = widgetType ? data : temperature;
+    const tempNumber = Number(tempString);
+    console.log({ TTT: tempNumber });
+    const tempValueCelcius = String((((tempNumber - 32) * 5) / 9).toFixed(1));
+    return tempValueCelcius;
   }
 
   return (
@@ -34,17 +35,13 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
         loading={loading}
         color="red"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
-        {loading ? (
-          <Loader />
-        ) : (
-          <CustomWidgetButton
-            text="update temperature"
-            widgetType="temp"
-            setWidgetType={setWidgetType}
-          />
-        )}
-      </div>
+
+      <CustomWidgetButton
+        text="update temperature"
+        widgetType="temp"
+        setWidgetType={setWidgetType}
+        loading={loading}
+      />
     </WidgetWrapper>
   );
 };

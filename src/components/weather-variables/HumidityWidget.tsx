@@ -25,17 +25,13 @@ const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
         loading={loading}
         color="green"
       />
-      <div className="max-h-16 p-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
-        {loading ? (
-          <Loader />
-        ) : (
-          <CustomWidgetButton
-            text="update humidity"
-            widgetType="humidity"
-            setWidgetType={setWidgetType}
-          />
-        )}
-      </div>
+
+      <CustomWidgetButton
+        text="update humidity"
+        widgetType="humidity"
+        setWidgetType={setWidgetType}
+        loading={loading}
+      />
     </WidgetWrapper>
   );
 };

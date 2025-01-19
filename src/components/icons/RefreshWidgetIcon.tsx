@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReloadWidgetIcon = () => {
+const RefreshWidgetIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const ReloadWidgetIcon = () => {
   );
 };
 
-export default ReloadWidgetIcon;
+export default RefreshWidgetIcon;

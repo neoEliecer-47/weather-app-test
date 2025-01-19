@@ -55,7 +55,8 @@ export type widgetWrapperProps = baseWidgetProperty & {
 export type CustomWidgetButtonProps = {
   text: string,
   widgetType: string,
-  setWidgetType: React.Dispatch<React.SetStateAction<string>>
+  setWidgetType: React.Dispatch<React.SetStateAction<string>>,
+  loading: boolean
 }
 
 export type widgetData = {
@@ -64,5 +65,5 @@ export type widgetData = {
   unit: string;
   variableValue?: string;
   loading: boolean;
-  color?: string;
+  color: string;
 }

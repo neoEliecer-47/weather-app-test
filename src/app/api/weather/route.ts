@@ -7,7 +7,10 @@ export async function GET(req: NextRequest) {
 
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily,minutely,alerts&appid=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily,minutely,alerts&appid=${process.env.NEXT_PUBLIC_API_KEY}`,{
+        method: 'GET',
+        cache: 'no-store'
+      }
     );
     if (!response)
       throw new Error(`The Request failed due to an issue in the external api`); //error handling
