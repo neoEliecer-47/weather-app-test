@@ -15,11 +15,30 @@
   inherits: false;
 }
 
+.countryName {
+  animation: opacity-load 300ms linear;
+  transition: opacity 1s linear;
+}
+
+.widgetsContainer {
+  animation: opacity-load 500ms linear;
+  transition: opacity 1s linear;
+}
+
 @keyframes colors {
   from {
     --angle: 0deg;
   }
   to {
     --angle: 360deg;
+  }
+}
+
+@keyframes opacity-load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

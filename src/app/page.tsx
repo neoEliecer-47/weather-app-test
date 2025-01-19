@@ -27,8 +27,8 @@ export default async function Home({ searchParams }: searchParamsProps) {
         countries={countriesAllowedData}
         placeholder="Select country"
       />
-      <h1 className='w-full text-center capitalize text-2xl font-bold bg-white rounded-md mt-6 md:max-w-[20rem] mx-auto shadow-lg'>{paramsSearch.country}</h1>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 w-full p-0 lg:max-w-[50rem] mx-auto">
+      <h1 className={classNames('w-full text-center capitalize text-2xl font-bold bg-white rounded-md mt-6 md:max-w-[20rem] mx-auto shadow-lg', styles.countryName)} >{paramsSearch.country}</h1>
+      <section className={classNames('grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 w-full p-0 lg:max-w-[50rem] mx-auto', styles.widgetsContainer)}>
         <TemperatureWidget temperature={temp} />
         <WindWidget windSpeed={wind_speed} />
         <HumidityWidget humidity={humidity} />
