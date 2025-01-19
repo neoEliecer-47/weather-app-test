@@ -24,7 +24,7 @@ const HumidityWidget = ({ humidity }: HumidityWidgetProps) => {
         variableValue={!widgetType ? humidity : data}
         loading={loading}
       />
-      <div className="p-0 m-0 flex justify-center items-center">
+      <div className="max-h-16 p-0 flex justify-center items-center mt-[1rem]">
         {loading ? (
           <Loader />
         ) : (

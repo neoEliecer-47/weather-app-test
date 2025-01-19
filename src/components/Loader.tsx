@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-<div className="w-[5rem] h-[5rem] ">
+<div className=" w-[2rem] h-[1rem] p-0 m-0">
 <svg
       fill="hsl(228, 97%, 42%)"
       viewBox="0 0 24 24"

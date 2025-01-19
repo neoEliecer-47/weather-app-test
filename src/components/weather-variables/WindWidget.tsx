@@ -33,7 +33,7 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
         variableValue={changeWindMphToKh()}
         loading={loading}
       />
-      <div className="p-0 m-0 flex justify-center items-center">
+      <div className="p-0 m-0 flex justify-center items-center mt-[1rem]">
         {loading ? (
           <Loader />
         ) : (
