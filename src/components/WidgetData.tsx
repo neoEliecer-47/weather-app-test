@@ -9,13 +9,12 @@ const WidgetData = ({
   unit,
   variableValue,
   loading,
-  color
+  color,
 }: widgetData) => {
-
- 
-
   return (
-    <div className={`transition-all w-full h-[5.5rem] md:h-[7rem] pt-2 px-4 flex flex-col bg-white/55 hover:bg-white/85 rounded-tr-3xl rounded-tl-3xl `}>
+    <div
+      className={`transition-all w-full h-[5.5rem] md:h-[7rem] pt-2 px-4 flex flex-col bg-white/55 hover:bg-white/85 rounded-tr-3xl rounded-tl-3xl `}
+    >
       <section className="w-full flex justify-between pt-0">
         <div className="p-0 m-0 h-12 w-12 flex justify-center items-center">
           <Image
@@ -26,8 +25,11 @@ const WidgetData = ({
             objectFit="contain"
           />
         </div>
-        
-        <h2 style={{ backgroundColor: buildBackgroundWidgetColorName(color) }} className="p-2 rounded-2xl capitalize text-md flex justify-center items-center text-lg font-semibold">
+
+        <h2
+          style={{ backgroundColor: buildBackgroundWidgetColorName(color) }}
+          className="p-2 rounded-2xl capitalize text-md flex justify-center items-center text-lg font-semibold"
+        >
           {widgetName}
         </h2>
       </section>

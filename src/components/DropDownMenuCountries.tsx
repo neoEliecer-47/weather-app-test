@@ -45,6 +45,7 @@ const DropDownMenuCountries = ({
     return filterCountry;
   }
 
+  //this function sanitize the text before process it
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const sanitizedValue = event.target.value.replace(/[^a-z]/g, ""); //to only allow letters in the input
     setSearchTerm(sanitizedValue);
@@ -55,7 +56,7 @@ const DropDownMenuCountries = ({
       setIsOpen(false);
       setIsClickOutside(false);
     }
-  }, [isClickOutside]);
+  }, [isClickOutside]);//to handle and close it when user clicks outside the element
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -69,7 +70,6 @@ const DropDownMenuCountries = ({
         className="cursor-pointer p-0 mt-2 shadow-md z-20 "
         ref={dropMenuRef}
         onClick={() => setIsOpen(!isOpen)}
-        
       >
         <div className="capitalize hover:bg-white/65 relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
           {placeholder}

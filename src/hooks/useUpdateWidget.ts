@@ -1,7 +1,10 @@
 import { updateWidgetVariable } from "@/utils";
 import React, { SetStateAction, useEffect, useMemo, useState } from "react";
 
-export function useUpdateWidget(widgetType: string, setWidgetType: React.Dispatch<SetStateAction<string>>) {
+export function useUpdateWidget(
+  widgetType: string,
+  setWidgetType: React.Dispatch<SetStateAction<string>>
+) {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<string>("");
 
@@ -11,9 +14,8 @@ export function useUpdateWidget(widgetType: string, setWidgetType: React.Dispatc
     try {
       const widgetUpdatedVariableData = await updateWidgetVariable();
       setLoading(false);
-      setWidgetType('')
+      setWidgetType("");
       setData(widgetUpdatedVariableData.current[widgetType]);
-      
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error("error getting the data from hook", error.message);
@@ -23,7 +25,7 @@ export function useUpdateWidget(widgetType: string, setWidgetType: React.Dispatc
 
   useEffect(() => {
     handleUpdate();
-  }, [widgetType]);
+  }, [widgetType]);//it renders every time widgetType changes
 
   return { data, loading };
 }

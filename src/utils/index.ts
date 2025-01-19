@@ -1,10 +1,12 @@
-export async function fetchCountries() {//countries allowed
+export async function fetchCountries() {
+  //countries allowed
   const response = await fetch("https://restcountries.com/v3.1/all");
   const data = await response.json();
   return data;
 }
 
-export async function fetchWeatherCountry(params: { //function to fetch countries current weather data
+export async function fetchWeatherCountry(params: {
+  //function to fetch countries current weather data
   lat: string;
   lon: string;
 }) {
@@ -15,7 +17,7 @@ export async function fetchWeatherCountry(params: { //function to fetch countrie
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`,
       {
         method: "GET",
-        cache: 'no-store',
+        cache: "no-store",
         headers: {
           "Cache-Control": "no-cache",
           Pragma: "no-cache",
@@ -47,8 +49,9 @@ export function updateSearchParams( //function which is used from the client sid
   return newPathname;
 }
 
-export async function updateWidgetVariable() {//function to update one single widget from the client
-  
+export async function updateWidgetVariable() {
+  //function to update one single widget from the client
+
   try {
     const searchParams = new URLSearchParams(window.location.search);
     const lat = searchParams.get("lat");
@@ -65,4 +68,3 @@ export async function updateWidgetVariable() {//function to update one single wi
     }
   }
 }
-

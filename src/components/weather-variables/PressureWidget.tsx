@@ -14,7 +14,7 @@ type PressureWidgetProps = {
 
 const PressureWidget = ({ pressure }: PressureWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
-  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);//custom hook which make the call to the server side to get specific updated data
   return (
     <WidgetWrapper>
       <WidgetData

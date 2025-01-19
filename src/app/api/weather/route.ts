@@ -1,15 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const query = req.nextUrl.searchParams; //params to get the country
+  const query = req.nextUrl.searchParams; //params to get the country latitude and longitude
   const lat = query.get("lat");
   const lon = query.get("lon");
 
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily,minutely,alerts&appid=${process.env.NEXT_PUBLIC_API_KEY}`,{
-        method: 'GET',
-        cache: 'no-store'
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily,minutely,alerts&appid=${process.env.NEXT_PUBLIC_API_KEY}`,
+      {
+        method: "GET",
+        cache: "no-store",
       }
     );
     if (!response)
@@ -17,7 +18,7 @@ export async function GET(req: NextRequest) {
 
     const data = await response.json();
 
-    return NextResponse.json(data, { status: 200 });
+    return NextResponse.json(data, { status: 200 }); //code 200 ok
   } catch (error: unknown) {
     //error handling
     if (error instanceof Error) {

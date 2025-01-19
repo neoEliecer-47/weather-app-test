@@ -25,8 +25,8 @@ interface baseWidgetProperty {
 type lastPropertyName = "temperature" | "wind" | "humidity" | "pressure";
 
 export type searchParamsProps = {
-  searchParams: Promise<params>
-}
+  searchParams: Promise<params>;
+};
 
 interface params {
   lat: string;
@@ -35,30 +35,28 @@ interface params {
 }
 
 export type updateWidgetDataProps = {
-  current : {
+  current: {
     temp: string;
     pressure: string;
     humidity: string;
     wind_speed: string;
-  }
-}
+  };
+};
 
 export type widgetWrapperProps = baseWidgetProperty & {
   temperature: string;
   humidity: string;
   pressure: string;
   wind: string;
-
-
-}
+};
 
 export type CustomWidgetButtonProps = {
-  text: string,
-  widgetType: string,
-  setWidgetType: React.Dispatch<React.SetStateAction<string>>,
-  loading: boolean,
-  unitSwitchFeature?: boolean
-}
+  text: string;
+  widgetType: string;
+  setWidgetType: React.Dispatch<React.SetStateAction<string>>;
+  loading: boolean;
+  unitSwitchFeature?: boolean;
+};
 
 export type widgetData = {
   widgetName: string;
@@ -67,11 +65,11 @@ export type widgetData = {
   variableValue?: string;
   loading: boolean;
   color: string;
-}
+};
 
 export type widgetSwitchUnitsProps = {
-  currentUnit: boolean,
-  setCurrentUnit: React.Dispatch<React.SetStateAction<boolean>>,
-  unitValueOne: string,
+  currentUnit: boolean;
+  setCurrentUnit: React.Dispatch<React.SetStateAction<boolean>>;
+  unitValueOne: string;
   unitValueTwo: string;
-}
+};

@@ -17,7 +17,7 @@ type WindWidgetProps = {
 const WindWidget = ({ windSpeed }: WindWidgetProps) => {
   const [widgetType, setWidgetType] = useState("");
   const [mphUnit, setMphUnit] = useState(false);
-  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);//custom hook which make the call to the server side to get specific updated data
 
   function changeWindMphToKh() {
     /// I do this calculation since the units from the api come in mph units

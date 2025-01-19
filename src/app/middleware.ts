@@ -7,7 +7,7 @@ export function middleware(req: NextRequest) {
 
   if (!url.searchParams.has("lat")) {
     url.searchParams.set("lat", lat);
-
+    url.searchParams.set("lon", lon)
     return NextResponse.redirect(url);
   }
 
