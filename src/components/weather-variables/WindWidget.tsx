@@ -32,8 +32,9 @@ const WindWidget = ({ windSpeed }: WindWidgetProps) => {
         unit="km/h"
         variableValue={changeWindMphToKh()}
         loading={loading}
+        color="blue"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[1rem]">
+      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
         {loading ? (
           <Loader />
         ) : (

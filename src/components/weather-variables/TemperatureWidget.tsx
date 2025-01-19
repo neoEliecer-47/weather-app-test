@@ -32,8 +32,9 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
         unit="°C"
         variableValue={changeTempFahToCelcius()}
         loading={loading}
+        color="red"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[1rem]">
+      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
         {loading ? (
           <Loader />
         ) : (

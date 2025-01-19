@@ -23,8 +23,9 @@ const PressureWidget = ({ pressure }: PressureWidgetProps) => {
         unit="mb"
         variableValue={!widgetType ? pressure : data}
         loading={loading}
+        color="gray"
       />
-      <div className="p-0 m-0 flex justify-center items-center mt-[1rem]">
+      <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.5rem]">
         {loading ? (
           <Loader />
         ) : (

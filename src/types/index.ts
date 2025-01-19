@@ -64,4 +64,5 @@ export type widgetData = {
   unit: string;
   variableValue?: string;
   loading: boolean;
+  color?: string;
 }

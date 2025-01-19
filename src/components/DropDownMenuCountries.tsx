@@ -11,20 +11,26 @@ const DropDownMenuCountries = ({
   placeholder,
   countries,
 }: DropDownMenuCountriesProps) => {
-  const countriesRef = useRef<HTMLUListElement | null>(null)
+  const countriesRef = useRef<HTMLUListElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const { dropMenuRef, isClickOutside, setIsClickOutside } =
     useClickOutsideDetector();
-  const router = useRouter()
+  const router = useRouter();
 
   function buildLatitudeAndLongitude(latlon: number[], country: string) {
-   
-    const lat = latlon[0]
-    const lon = latlon[1]
-    const newPathname = updateSearchParams('lat', lat, 'lon', lon, 'country', country);
-    router.push(newPathname)
+    const lat = latlon[0];
+    const lon = latlon[1];
+    const newPathname = updateSearchParams(
+      "lat",
+      lat,
+      "lon",
+      lon,
+      "country",
+      country
+    );
+    router.push(newPathname);
   }
 
   //filter countries based on searchTerm
@@ -39,11 +45,9 @@ const DropDownMenuCountries = ({
     return filterCountry;
   }
 
-
-
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>){
-    const sanitizedValue = event.target.value.replace(/[^a-z]/g,'')//to only allow letters in the input
-    setSearchTerm(sanitizedValue)
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const sanitizedValue = event.target.value.replace(/[^a-z]/g, ""); //to only allow letters in the input
+    setSearchTerm(sanitizedValue);
   }
 
   useEffect(() => {
@@ -60,44 +64,51 @@ const DropDownMenuCountries = ({
         onChange={handleChange}
         className="p-2 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem] shadow-lg"
         onClick={() => setIsOpen(true)}
-        
-        
       />
       <section
-        className="cursor-pointer p-0 mt-2 shadow-md"
+        className="cursor-pointer p-0 mt-2 shadow-md z-20 "
         ref={dropMenuRef}
         onClick={() => setIsOpen(!isOpen)}
+        
       >
-        <div className="capitalize relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
+        <div className="capitalize hover:bg-white/65 relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
           {placeholder}
         </div>
 
         <ul
-          className={`max-h-[10rem] absolute m-auto w-[12rem] bg-white/50 rounded-[0.5rem] transition-all duration-250 ease-linear z-[9999px] shadow-sm overflow-scroll overflow-x-hidden overflow-y-auto`}
+          className={`max-h-[10rem] bg-transparent absolute m-auto w-[12rem] rounded-[0.5rem] transition-all duration-250 ease-linear z-[9999px] shadow-sm overflow-scroll overflow-x-hidden overflow-y-auto`}
           ref={countriesRef}
           style={{
-            height: isOpen === false ? '0px' : `${countriesRef.current?.scrollHeight}px`,
-            maxHeight: `${isOpen === true ? "10rem" : '0rem' }`,
-            scrollbarWidth: "none"
+            height:
+              isOpen === false
+                ? "0px"
+                : `${countriesRef.current?.scrollHeight}px`,
+            maxHeight: `${isOpen === true ? "10rem" : "0rem"}`,
+            scrollbarWidth: "none",
           }}
         >
-          {
-            filteredCountries().map(({ name, latlng }, index) => {
-              return (
-                <div
-                  key={index}
-                  onClick={() => {
-                    buildLatitudeAndLongitude(latlng, name.common);
-                    setSelectedCountry(name.common);
-                  }} 
-                  className="bg-white m-0 flex justify-between items-center"
+          {filteredCountries().map(({ name, latlng }, index) => {
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  buildLatitudeAndLongitude(latlng, name.common);
+                  setSelectedCountry(name.common);
+                }}
+                className="bg-white m-0 flex justify-between items-center"
+              >
+                <li
+                  className={`${
+                    selectedCountry === name.common
+                      ? "bg-blue-300"
+                      : "bg-white/35"
+                  } rounded-md text-center w-full m-0 p-2 border-[2px] border-red-100 `}
                 >
-                  
-                   
-                  <li className={`${selectedCountry === name.common ? 'bg-blue-300' : 'bg-white/35'} rounded-md text-center w-full m-0 p-2 border-[2px] border-red-100 `}>{name?.common}</li>
-                </div>
-              );
-            })}
+                  {name?.common}
+                </li>
+              </div>
+            );
+          })}
         </ul>
       </section>
     </div>
