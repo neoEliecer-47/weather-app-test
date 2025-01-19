@@ -1,12 +1,13 @@
 import { CustomWidgetButtonProps } from "@/types"
 import RefreshWidgetIcon from './icons/RefreshWidgetIcon'
 import Loader from "./Loader"
+import classNames from "classnames"
 
 
-export const CustomWidgetButton = ({ text, setWidgetType, widgetType, loading }: CustomWidgetButtonProps) => {
+export const CustomWidgetButton = ({ text, setWidgetType, widgetType, loading, unitSwitchFeature }: CustomWidgetButtonProps) => {
 
   return (
-    <div className="p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.6rem]">
+    <div className={classNames('p-0 m-0 flex justify-center items-center mt-[0.7rem] md:mt-[1.6rem] flex-1', unitSwitchFeature && 'mr-[3rem]')}>
       {loading ? (
         <Loader />
       ): (

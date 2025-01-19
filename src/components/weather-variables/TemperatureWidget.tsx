@@ -39,13 +39,19 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
         loading={loading}
         color="red"
       />
-      <div className="flex h-8 items-center justify-start gap-[6.1rem]">
-        <WidgetSwitchUnits currentUnit={fahUnit} setCurrentUnit={setFahUnit} unitValueOne="°C" unitValueTwo="°F"/>
+      <div className="flex h-8 items-center justify-start mt-2">
+        <WidgetSwitchUnits
+          currentUnit={fahUnit}
+          setCurrentUnit={setFahUnit}
+          unitValueOne="°C"
+          unitValueTwo="°F"
+        />
         <CustomWidgetButton
           text="update temperature"
           widgetType="temp"
           setWidgetType={setWidgetType}
           loading={loading}
+          unitSwitchFeature={true}
         />
       </div>
     </WidgetWrapper>

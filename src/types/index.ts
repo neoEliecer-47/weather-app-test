@@ -56,7 +56,8 @@ export type CustomWidgetButtonProps = {
   text: string,
   widgetType: string,
   setWidgetType: React.Dispatch<React.SetStateAction<string>>,
-  loading: boolean
+  loading: boolean,
+  unitSwitchFeature?: boolean
 }
 
 export type widgetData = {
