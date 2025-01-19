@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const WidgetData = ({ widgetName, imgSrc, unit, variableValue, loading }: widgetData) => {
   return (
-    <div className="w-full  p-0 flex flex-col">
+    <div className="w-full  p-0 flex flex-col bg-red-500 ">
         <section className="w-full flex justify-start pt-0">
             <Image src={imgSrc} alt={widgetName} width={50} height={50} objectFit='contain'/>
         </section>

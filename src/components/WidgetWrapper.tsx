@@ -1,9 +1,11 @@
+import classNames from "classnames"
 import { ReactNode } from "react"
+import styles from './WidgetWrapper.module.css'
 
 
 const WidgetWrapper = ({ children }: {children: ReactNode}) => {
   return (
-    <div className="p-2 w-full h-[10rem] md:h-[13rem] bg-blue-500 mx-0 rounded-[1.8rem]">
+    <div className={classNames(' w-full h-[10rem] md:h-[13rem]  mx-0 rounded-[1.8rem]', styles.container)}>
         {children}
     </div>
   )

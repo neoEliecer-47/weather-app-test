@@ -58,13 +58,13 @@ const DropDownMenuCountries = ({
       <input
         value={searchTerm}
         onChange={handleChange}
-        className="p-2 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem]"
+        className="p-2 border-red-300 bg-white/85 capitalize transition-opacity rounded-[0.5rem] shadow-lg"
         onClick={() => setIsOpen(true)}
         
         
       />
       <section
-        className="cursor-pointer p-0 mt-2"
+        className="cursor-pointer p-0 mt-2 shadow-md"
         ref={dropMenuRef}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -73,13 +73,12 @@ const DropDownMenuCountries = ({
         </div>
 
         <ul
-          className="absolute m-auto w-[12rem] bg-white/50 rounded-[0.5rem] transition-all duration-250 ease-linear z-[9999px] shadow-sm overflow-scroll overflow-x-hidden"
+          className={`max-h-[10rem] absolute m-auto w-[12rem] bg-white/50 rounded-[0.5rem] transition-all duration-250 ease-linear z-[9999px] shadow-sm overflow-scroll overflow-x-hidden overflow-y-auto`}
           ref={countriesRef}
           style={{
             height: isOpen === false ? '0px' : `${countriesRef.current?.scrollHeight}px`,
-            maxHeight: `${isOpen === true ? "12rem" : "0px"}`,
-            scrollbarWidth: "none",
-            
+            maxHeight: `${isOpen === true ? "10rem" : '0rem' }`,
+            scrollbarWidth: "none"
           }}
         >
           {
@@ -90,12 +89,12 @@ const DropDownMenuCountries = ({
                   onClick={() => {
                     buildLatitudeAndLongitude(latlng, name.common);
                     setSelectedCountry(name.common);
-                  }}
+                  }} 
                   className="bg-white m-0 flex justify-between items-center"
                 >
                   
                    
-                  <li className={`${selectedCountry === name.common ? 'bg-blue-300' : 'bg-white/35'} rounded-md text-center w-full m-0`}>{name?.common}</li>
+                  <li className={`${selectedCountry === name.common ? 'bg-blue-300' : 'bg-white/35'} rounded-md text-center w-full m-0 p-2 border-[2px] border-red-100 `}>{name?.common}</li>
                 </div>
               );
             })}

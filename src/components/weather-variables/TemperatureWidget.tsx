@@ -19,7 +19,8 @@ const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   function changeTempFahToCelcius(){// I do this calculation since the units from the api come in Fahrenheid units
     const tempString = widgetType ? data : temperature
     const tempNumber = Number(tempString)
-    const tempValueCelcius = String(((tempNumber - 32) * 5/9).toFixed(2))
+    console.log({TTT: tempNumber})
+    const tempValueCelcius = String(((tempNumber - 32) * 5/9).toFixed(1))
     return tempValueCelcius
   }
 
