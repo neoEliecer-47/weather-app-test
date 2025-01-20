@@ -80,7 +80,7 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
             scrollbarWidth: "none",
           }}
         >
-          {countries && filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
+          {filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}
