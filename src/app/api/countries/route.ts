@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 
     //countries allowed
     
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   
       const data = await response.json();
   
-      return NextResponse.json(data, { status: 200 }); //code 200 ok
+      return NextResponse.json(data); //code 200 ok
   } catch (error: unknown) {
     if (error instanceof Error) {
         console.error("Something happened in the server", error.message);
