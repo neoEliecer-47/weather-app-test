@@ -1,3 +1,4 @@
+//functiono that calls the route handler in order to get countries allowed 
 export async function fetchCountriesAllowed() {
   try {
     const response = await fetch(
@@ -49,7 +50,8 @@ export async function fetchWeatherCountry(params: {
   }
 }
 
-export function updateSearchParams( //function which is used from the client side to update searchParams
+//function which is used from the client side to update searchParams
+export function updateSearchParams( 
   type: string,
   value: number,
   typeTwo: string,
@@ -68,8 +70,9 @@ export function updateSearchParams( //function which is used from the client sid
   return newPathname;
 }
 
+//function to update one single widget from the client
 export async function updateWidgetVariable() {
-  //function to update one single widget from the client
+  
 
   try {
     const searchParams = new URLSearchParams(window.location.search);

@@ -1,4 +1,3 @@
-import { countries } from "@/types";
 
 export function buildBackgroundWidgetColorName(color: string) {
   //i tried to create backgrounds of even hovers for the dynamic widget component but it is not possible with Tailwind so built this
