@@ -1,5 +1,5 @@
 import DropDownMenuCountries from "@/components/DropDownMenuCountries";
-import { fetchWeatherCountry } from "@/utils";
+import { fetchCountriesAllowed, fetchWeatherCountry } from "@/utils";
 import { searchParamsProps } from "@/types";
 import TemperatureWidget from "@/components/weather-variables/TemperatureWidget";
 import WindWidget from "@/components/weather-variables/WindWidget";
@@ -12,6 +12,7 @@ import styles from "./page.module.css";
 
 export default async function Home({ searchParams }: searchParamsProps) {
   const paramsSearch = await searchParams;
+  const countriesAllowedData = await fetchCountriesAllowed()
   const countryWeatherData = await fetchWeatherCountry(paramsSearch);
   const { temp, wind_speed, pressure, humidity } = countryWeatherData.current;
 
@@ -19,6 +20,7 @@ export default async function Home({ searchParams }: searchParamsProps) {
     <div className={classNames("md:h-[100vh] w-full p-4", styles.pageContainer)}>
       <DropDownMenuCountries
         placeholder="Select country"
+        countries={countriesAllowedData}
       />
 
       <h1 className={classNames("w-full text-center capitalize text-2xl font-bold bg-white rounded-md mt-6 md:max-w-[20rem] mx-auto shadow-lg",

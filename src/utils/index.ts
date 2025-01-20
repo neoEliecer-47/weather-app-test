@@ -1,4 +1,14 @@
+export async function fetchCountriesAllowed() {
+  try {
+    const response = await fetch("https://restcountries.com/v3.1/all");
 
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export async function fetchWeatherCountry(params: {
   //function to fetch countries current weather data
