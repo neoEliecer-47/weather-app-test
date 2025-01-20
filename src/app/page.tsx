@@ -1,5 +1,5 @@
 import DropDownMenuCountries from "@/components/DropDownMenuCountries";
-import { fetchCountriesAllowed, fetchWeatherCountry } from "@/utils";
+import { fetchWeatherCountry } from "@/utils";
 import { searchParamsProps } from "@/types";
 import TemperatureWidget from "@/components/weather-variables/TemperatureWidget";
 import WindWidget from "@/components/weather-variables/WindWidget";
@@ -13,7 +13,6 @@ import styles from "./page.module.css";
 export default async function Home({ searchParams }: searchParamsProps) {
   const paramsSearch = await searchParams;
   const countryWeatherData = await fetchWeatherCountry(paramsSearch);
-  //const countriesAllowedData = await fetchCountriesAllowed();
   const { temp, wind_speed, pressure, humidity } = countryWeatherData.current;
 
   return (

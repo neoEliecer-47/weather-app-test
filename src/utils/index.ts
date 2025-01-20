@@ -1,21 +1,4 @@
 
-export async function fetchCountriesAllowed() {
-
-  //countries allowed
-  
- try {
-  const response = await fetch("https://restcountries.com/v3.1/all");
-  const data = await response.json();
-  return data;
-} catch (error: unknown) {
-  if (error instanceof Error) {
-    console.error(
-      "something happened trying to get the countries data",
-      error.message
-    );
-  }
-}
-}
 
 export async function fetchWeatherCountry(params: {
   //function to fetch countries current weather data

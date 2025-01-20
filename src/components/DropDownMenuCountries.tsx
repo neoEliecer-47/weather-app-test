@@ -13,7 +13,7 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [countries, setCountries] = useState<countries[]>()
+  const [countries, setCountries] = useState<countries[]>([])
   const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
   const router = useRouter();
 
@@ -32,9 +32,13 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
 
    useEffect(()=> {
      async function getCountriesAllowed() {
-         const response = await fetch('/api/countries')//calling to the server side (route handler) to get the countries allowed
-         const data = await response.json()
-         setCountries(data)
+         try {
+          const response = await fetch('/api/countries')//calling to the server side (route handler) to get the countries allowed
+          const data = await response.json()
+          setCountries(data)
+         } catch (error) {
+          console.log(error)
+         }
      }
      getCountriesAllowed()
    }, [])
