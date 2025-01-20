@@ -9,9 +9,6 @@ export async function GET() {
         method: 'GET',
         cache: 'no-store'
     });
-   
-    if (!response)
-        throw new Error(`The Request failed due to an issue in the external api`); //error handling
   
       const data = await response.json();
   
