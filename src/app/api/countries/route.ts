@@ -18,10 +18,11 @@ export async function GET(req: NextRequest) {
       return NextResponse.json(data, { status: 200 }); //code 200 ok
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error(
-        "something happened trying to get the countries data",
-        error.message
-      );
+        console.error("Something happened in the server", error.message);
+        return NextResponse.json({
+          error: error.message,
+          status: 500,
+        });
     }
   }
   
