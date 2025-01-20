@@ -1,10 +1,20 @@
+
 export async function fetchCountriesAllowed() {
+
   //countries allowed
-  const response = await fetch("https://restcountries.com/v3.1/all", {
-    cache: 'no-store'
-  });
+  
+ try {
+  const response = await fetch("https://restcountries.com/v3.1/all");
   const data = await response.json();
   return data;
+} catch (error: unknown) {
+  if (error instanceof Error) {
+    console.error(
+      "something happened trying to get the countries data",
+      error.message
+    );
+  }
+}
 }
 
 export async function fetchWeatherCountry(params: {
@@ -29,7 +39,14 @@ export async function fetchWeatherCountry(params: {
     const data = await res.json();
 
     return data;
-  } catch (error) {}
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(
+        "something happened trying to get the country weather data",
+        error.message
+      );
+    }
+  }
 }
 
 export function updateSearchParams( //function which is used from the client side to update searchParams

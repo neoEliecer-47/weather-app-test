@@ -1,49 +1,28 @@
 "use client";
 
+import { filteredCountries } from "@/helpers";
 import { useClickOutsideDetector } from "@/hooks/useClickOutside";
-import { DropDownMenuCountriesProps } from "@/types";
+import { countries } from "@/types";
 import { updateSearchParams } from "@/utils";
 import { useRouter } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
-const DropDownMenuCountries = ({
-  placeholder,
-  countries,
-}: DropDownMenuCountriesProps) => {
+const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
   const countriesRef = useRef<HTMLUListElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const { dropMenuRef, isClickOutside, setIsClickOutside } =
-    useClickOutsideDetector();
+  const [countries, setCountries] = useState<countries[]>()
+  const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
   const router = useRouter();
 
   function buildLatitudeAndLongitude(latlon: number[], country: string) {
-    const lat = latlon[0];
-    const lon = latlon[1];
-    const newPathname = updateSearchParams(
-      "lat",
-      lat,
-      "lon",
-      lon,
-      "country",
-      country
-    );
+    const [lat, lon] = latlon;
+    const newPathname = updateSearchParams("lat", lat, "lon", lon, "country", country);
     router.push(newPathname);
   }
 
-  //filter countries based on searchTerm
-
-  function filteredCountries() {
-    if (!searchTerm) return countries;
-
-    const filterCountry = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    return filterCountry;
-  }
 
   //this function sanitize the text before process it
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -51,12 +30,22 @@ const DropDownMenuCountries = ({
     setSearchTerm(sanitizedValue);
   }
 
+   useEffect(()=> {
+     async function getCountriesAllowed() {
+         const response = await fetch('/api/countries')//calling to the server side (route handler) to get the countries allowed
+         const data = await response.json()
+         setCountries(data)
+     }
+     getCountriesAllowed()
+   }, [])
+
   useEffect(() => {
     if (isClickOutside) {
       setIsOpen(false);
       setIsClickOutside(false);
     }
   }, [isClickOutside]);//to handle and close it when user clicks outside the element
+
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -87,7 +76,7 @@ const DropDownMenuCountries = ({
             scrollbarWidth: "none",
           }}
         >
-          {filteredCountries().map(({ name, latlng }, index) => {
+          {countries && filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}

@@ -3,7 +3,7 @@ import React from "react";
 
 export type DropDownMenuCountriesProps = {
   placeholder: string;
-  countries: countries[];
+  countries?: countries[];
 };
 
 export type widgetInfoProps = baseWidgetProperty & {
@@ -14,7 +14,7 @@ export interface countries {
   name: {
     common: string;
   };
-  latlng: number[];
+  latlng: [number, number];
 }
 
 interface baseWidgetProperty {
