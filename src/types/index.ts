@@ -11,10 +11,8 @@ export type widgetInfoProps = baseWidgetProperty & {
 };
 
 export interface countries {
-  name: {
-    common: string;
-  };
-  latlng: [number, number];
+  common: string;
+  latlng: number[];
 }
 
 interface baseWidgetProperty {

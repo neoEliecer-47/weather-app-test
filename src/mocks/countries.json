@@ -1,0 +1,1752 @@
+[
+    {
+      "common": "South Georgia",
+      "latlng": [
+        -54.5,
+        -37
+      ]
+    },
+    {
+      "common": "Grenada",
+      "latlng": [
+        12.11666666,
+        -61.66666666
+      ]
+    },
+    {
+      "common": "Switzerland",
+      "latlng": [
+        47,
+        8
+      ]
+    },
+    {
+      "common": "Sierra Leone",
+      "latlng": [
+        8.5,
+        -11.5
+      ]
+    },
+    {
+      "common": "Hungary",
+      "latlng": [
+        47,
+        20
+      ]
+    },
+    {
+      "common": "Taiwan",
+      "latlng": [
+        23.5,
+        121
+      ]
+    },
+    {
+      "common": "Wallis and Futuna",
+      "latlng": [
+        -13.3,
+        -176.2
+      ]
+    },
+    {
+      "common": "Barbados",
+      "latlng": [
+        13.16666666,
+        -59.53333333
+      ]
+    },
+    {
+      "common": "Pitcairn Islands",
+      "latlng": [
+        -25.06666666,
+        -130.1
+      ]
+    },
+    {
+      "common": "Ivory Coast",
+      "latlng": [
+        8,
+        -5
+      ]
+    },
+    {
+      "common": "Tunisia",
+      "latlng": [
+        34,
+        9
+      ]
+    },
+    {
+      "common": "Italy",
+      "latlng": [
+        42.83333333,
+        12.83333333
+      ]
+    },
+    {
+      "common": "Benin",
+      "latlng": [
+        9.5,
+        2.25
+      ]
+    },
+    {
+      "common": "Indonesia",
+      "latlng": [
+        -5,
+        120
+      ]
+    },
+    {
+      "common": "Cape Verde",
+      "latlng": [
+        16.5388,
+        -23.0418
+      ]
+    },
+    {
+      "common": "Saint Kitts and Nevis",
+      "latlng": [
+        17.33333333,
+        -62.75
+      ]
+    },
+    {
+      "common": "Laos",
+      "latlng": [
+        18,
+        105
+      ]
+    },
+    {
+      "common": "Caribbean Netherlands",
+      "latlng": [
+        12.18,
+        -68.25
+      ]
+    },
+    {
+      "common": "Uganda",
+      "latlng": [
+        1,
+        32
+      ]
+    },
+    {
+      "common": "Andorra",
+      "latlng": [
+        42.5,
+        1.5
+      ]
+    },
+    {
+      "common": "Burundi",
+      "latlng": [
+        -3.5,
+        30
+      ]
+    },
+    {
+      "common": "South Africa",
+      "latlng": [
+        -29,
+        24
+      ]
+    },
+    {
+      "common": "France",
+      "latlng": [
+        46,
+        2
+      ]
+    },
+    {
+      "common": "Libya",
+      "latlng": [
+        25,
+        17
+      ]
+    },
+    {
+      "common": "Mexico",
+      "latlng": [
+        23,
+        -102
+      ]
+    },
+    {
+      "common": "Gabon",
+      "latlng": [
+        -1,
+        11.75
+      ]
+    },
+    {
+      "common": "Northern Mariana Islands",
+      "latlng": [
+        15.2,
+        145.75
+      ]
+    },
+    {
+      "common": "North Macedonia",
+      "latlng": [
+        41.83333333,
+        22
+      ]
+    },
+    {
+      "common": "China",
+      "latlng": [
+        35,
+        105
+      ]
+    },
+    {
+      "common": "Yemen",
+      "latlng": [
+        15,
+        48
+      ]
+    },
+    {
+      "common": "Saint Barthélemy",
+      "latlng": [
+        18.5,
+        -63.41666666
+      ]
+    },
+    {
+      "common": "Guernsey",
+      "latlng": [
+        49.46666666,
+        -2.58333333
+      ]
+    },
+    {
+      "common": "Solomon Islands",
+      "latlng": [
+        -8,
+        159
+      ]
+    },
+    {
+      "common": "Svalbard and Jan Mayen",
+      "latlng": [
+        78,
+        20
+      ]
+    },
+    {
+      "common": "Faroe Islands",
+      "latlng": [
+        62,
+        -7
+      ]
+    },
+    {
+      "common": "Uzbekistan",
+      "latlng": [
+        41,
+        64
+      ]
+    },
+    {
+      "common": "Egypt",
+      "latlng": [
+        27,
+        30
+      ]
+    },
+    {
+      "common": "Senegal",
+      "latlng": [
+        14,
+        -14
+      ]
+    },
+    {
+      "common": "Sri Lanka",
+      "latlng": [
+        7,
+        81
+      ]
+    },
+    {
+      "common": "Palestine",
+      "latlng": [
+        31.9,
+        35.2
+      ]
+    },
+    {
+      "common": "Bangladesh",
+      "latlng": [
+        24,
+        90
+      ]
+    },
+    {
+      "common": "Peru",
+      "latlng": [
+        -10,
+        -76
+      ]
+    },
+    {
+      "common": "Singapore",
+      "latlng": [
+        1.36666666,
+        103.8
+      ]
+    },
+    {
+      "common": "Turkey",
+      "latlng": [
+        39,
+        35
+      ]
+    },
+    {
+      "common": "Afghanistan",
+      "latlng": [
+        33,
+        65
+      ]
+    },
+    {
+      "common": "Aruba",
+      "latlng": [
+        12.5,
+        -69.96666666
+      ]
+    },
+    {
+      "common": "Cook Islands",
+      "latlng": [
+        -21.23333333,
+        -159.76666666
+      ]
+    },
+    {
+      "common": "United Kingdom",
+      "latlng": [
+        54,
+        -2
+      ]
+    },
+    {
+      "common": "Zambia",
+      "latlng": [
+        -15,
+        30
+      ]
+    },
+    {
+      "common": "Finland",
+      "latlng": [
+        64,
+        26
+      ]
+    },
+    {
+      "common": "Niger",
+      "latlng": [
+        16,
+        8
+      ]
+    },
+    {
+      "common": "Christmas Island",
+      "latlng": [
+        -10.5,
+        105.66666666
+      ]
+    },
+    {
+      "common": "Tokelau",
+      "latlng": [
+        -9,
+        -172
+      ]
+    },
+    {
+      "common": "Guinea-Bissau",
+      "latlng": [
+        12,
+        -15
+      ]
+    },
+    {
+      "common": "Azerbaijan",
+      "latlng": [
+        40.5,
+        47.5
+      ]
+    },
+    {
+      "common": "Réunion",
+      "latlng": [
+        -21.15,
+        55.5
+      ]
+    },
+    {
+      "common": "Djibouti",
+      "latlng": [
+        11.5,
+        43
+      ]
+    },
+    {
+      "common": "North Korea",
+      "latlng": [
+        40,
+        127
+      ]
+    },
+    {
+      "common": "Mauritius",
+      "latlng": [
+        -20.28333333,
+        57.55
+      ]
+    },
+    {
+      "common": "Montserrat",
+      "latlng": [
+        16.75,
+        -62.2
+      ]
+    },
+    {
+      "common": "United States Virgin Islands",
+      "latlng": [
+        18.35,
+        -64.933333
+      ]
+    },
+    {
+      "common": "Colombia",
+      "latlng": [
+        4,
+        -72
+      ]
+    },
+    {
+      "common": "Greece",
+      "latlng": [
+        39,
+        22
+      ]
+    },
+    {
+      "common": "Croatia",
+      "latlng": [
+        45.16666666,
+        15.5
+      ]
+    },
+    {
+      "common": "Morocco",
+      "latlng": [
+        32,
+        -5
+      ]
+    },
+    {
+      "common": "Algeria",
+      "latlng": [
+        28,
+        3
+      ]
+    },
+    {
+      "common": "Antarctica",
+      "latlng": [
+        -90,
+        0
+      ]
+    },
+    {
+      "common": "Netherlands",
+      "latlng": [
+        52.5,
+        5.75
+      ]
+    },
+    {
+      "common": "Sudan",
+      "latlng": [
+        15,
+        30
+      ]
+    },
+    {
+      "common": "Fiji",
+      "latlng": [
+        17.7134,
+        178.065
+      ]
+    },
+    {
+      "common": "Liechtenstein",
+      "latlng": [
+        47.26666666,
+        9.53333333
+      ]
+    },
+    {
+      "common": "Nepal",
+      "latlng": [
+        28,
+        84
+      ]
+    },
+    {
+      "common": "Puerto Rico",
+      "latlng": [
+        18.25,
+        -66.5
+      ]
+    },
+    {
+      "common": "Georgia",
+      "latlng": [
+        42,
+        43.5
+      ]
+    },
+    {
+      "common": "Pakistan",
+      "latlng": [
+        30,
+        70
+      ]
+    },
+    {
+      "common": "Monaco",
+      "latlng": [
+        43.73333333,
+        7.4
+      ]
+    },
+    {
+      "common": "Botswana",
+      "latlng": [
+        -22,
+        24
+      ]
+    },
+    {
+      "common": "Lebanon",
+      "latlng": [
+        33.83333333,
+        35.83333333
+      ]
+    },
+    {
+      "common": "Papua New Guinea",
+      "latlng": [
+        -6,
+        147
+      ]
+    },
+    {
+      "common": "Mayotte",
+      "latlng": [
+        -12.83333333,
+        45.16666666
+      ]
+    },
+    {
+      "common": "Dominican Republic",
+      "latlng": [
+        19,
+        -70.66666666
+      ]
+    },
+    {
+      "common": "Norfolk Island",
+      "latlng": [
+        -29.03333333,
+        167.95
+      ]
+    },
+    {
+      "common": "Bouvet Island",
+      "latlng": [
+        54.4208,
+        3.3464
+      ]
+    },
+    {
+      "common": "Qatar",
+      "latlng": [
+        25.5,
+        51.25
+      ]
+    },
+    {
+      "common": "Madagascar",
+      "latlng": [
+        -20,
+        47
+      ]
+    },
+    {
+      "common": "India",
+      "latlng": [
+        20,
+        77
+      ]
+    },
+    {
+      "common": "Syria",
+      "latlng": [
+        35,
+        38
+      ]
+    },
+    {
+      "common": "Montenegro",
+      "latlng": [
+        42.5,
+        19.3
+      ]
+    },
+    {
+      "common": "Eswatini",
+      "latlng": [
+        -26.5,
+        31.5
+      ]
+    },
+    {
+      "common": "Paraguay",
+      "latlng": [
+        -23,
+        -58
+      ]
+    },
+    {
+      "common": "El Salvador",
+      "latlng": [
+        13.83333333,
+        -88.91666666
+      ]
+    },
+    {
+      "common": "Ukraine",
+      "latlng": [
+        49,
+        32
+      ]
+    },
+    {
+      "common": "Isle of Man",
+      "latlng": [
+        54.25,
+        -4.5
+      ]
+    },
+    {
+      "common": "Namibia",
+      "latlng": [
+        -22,
+        17
+      ]
+    },
+    {
+      "common": "United Arab Emirates",
+      "latlng": [
+        24,
+        54
+      ]
+    },
+    {
+      "common": "Bulgaria",
+      "latlng": [
+        43,
+        25
+      ]
+    },
+    {
+      "common": "Greenland",
+      "latlng": [
+        72,
+        -40
+      ]
+    },
+    {
+      "common": "Germany",
+      "latlng": [
+        51,
+        9
+      ]
+    },
+    {
+      "common": "Cambodia",
+      "latlng": [
+        13,
+        105
+      ]
+    },
+    {
+      "common": "Iraq",
+      "latlng": [
+        33,
+        44
+      ]
+    },
+    {
+      "common": "French Southern and Antarctic Lands",
+      "latlng": [
+        -49.25,
+        69.167
+      ]
+    },
+    {
+      "common": "Sweden",
+      "latlng": [
+        62,
+        15
+      ]
+    },
+    {
+      "common": "Cuba",
+      "latlng": [
+        21.5,
+        -80
+      ]
+    },
+    {
+      "common": "Kyrgyzstan",
+      "latlng": [
+        41,
+        75
+      ]
+    },
+    {
+      "common": "Russia",
+      "latlng": [
+        60,
+        100
+      ]
+    },
+    {
+      "common": "Malaysia",
+      "latlng": [
+        2.5,
+        112.5
+      ]
+    },
+    {
+      "common": "São Tomé and Príncipe",
+      "latlng": [
+        1,
+        7
+      ]
+    },
+    {
+      "common": "Cyprus",
+      "latlng": [
+        35,
+        33
+      ]
+    },
+    {
+      "common": "Canada",
+      "latlng": [
+        60,
+        -95
+      ]
+    },
+    {
+      "common": "Malawi",
+      "latlng": [
+        -13.5,
+        34
+      ]
+    },
+    {
+      "common": "Saudi Arabia",
+      "latlng": [
+        25,
+        45
+      ]
+    },
+    {
+      "common": "Bosnia and Herzegovina",
+      "latlng": [
+        44,
+        18
+      ]
+    },
+    {
+      "common": "Ethiopia",
+      "latlng": [
+        8,
+        38
+      ]
+    },
+    {
+      "common": "Spain",
+      "latlng": [
+        40,
+        -4
+      ]
+    },
+    {
+      "common": "Slovenia",
+      "latlng": [
+        46.11666666,
+        14.81666666
+      ]
+    },
+    {
+      "common": "Oman",
+      "latlng": [
+        21,
+        57
+      ]
+    },
+    {
+      "common": "Saint Pierre and Miquelon",
+      "latlng": [
+        46.83333333,
+        -56.33333333
+      ]
+    },
+    {
+      "common": "Macau",
+      "latlng": [
+        22.16666666,
+        113.55
+      ]
+    },
+    {
+      "common": "San Marino",
+      "latlng": [
+        43.76666666,
+        12.41666666
+      ]
+    },
+    {
+      "common": "Lesotho",
+      "latlng": [
+        -29.5,
+        28.5
+      ]
+    },
+    {
+      "common": "Marshall Islands",
+      "latlng": [
+        9,
+        168
+      ]
+    },
+    {
+      "common": "Sint Maarten",
+      "latlng": [
+        18.033333,
+        -63.05
+      ]
+    },
+    {
+      "common": "Iceland",
+      "latlng": [
+        65,
+        -18
+      ]
+    },
+    {
+      "common": "Luxembourg",
+      "latlng": [
+        49.75,
+        6.16666666
+      ]
+    },
+    {
+      "common": "Argentina",
+      "latlng": [
+        -34,
+        -64
+      ]
+    },
+    {
+      "common": "Turks and Caicos Islands",
+      "latlng": [
+        21.75,
+        -71.58333333
+      ]
+    },
+    {
+      "common": "Nauru",
+      "latlng": [
+        -0.53333333,
+        166.91666666
+      ]
+    },
+    {
+      "common": "Cocos (Keeling) Islands",
+      "latlng": [
+        12.1642,
+        96.871
+      ]
+    },
+    {
+      "common": "Western Sahara",
+      "latlng": [
+        24.5,
+        -13
+      ]
+    },
+    {
+      "common": "Dominica",
+      "latlng": [
+        15.41666666,
+        -61.33333333
+      ]
+    },
+    {
+      "common": "Costa Rica",
+      "latlng": [
+        10,
+        -84
+      ]
+    },
+    {
+      "common": "Australia",
+      "latlng": [
+        -27,
+        133
+      ]
+    },
+    {
+      "common": "Thailand",
+      "latlng": [
+        15,
+        100
+      ]
+    },
+    {
+      "common": "Haiti",
+      "latlng": [
+        19,
+        -72.41666666
+      ]
+    },
+    {
+      "common": "Tuvalu",
+      "latlng": [
+        -8,
+        178
+      ]
+    },
+    {
+      "common": "Honduras",
+      "latlng": [
+        15,
+        -86.5
+      ]
+    },
+    {
+      "common": "Equatorial Guinea",
+      "latlng": [
+        2,
+        10
+      ]
+    },
+    {
+      "common": "Saint Lucia",
+      "latlng": [
+        13.88333333,
+        -60.96666666
+      ]
+    },
+    {
+      "common": "French Polynesia",
+      "latlng": [
+        17.6797,
+        149.4068
+      ]
+    },
+    {
+      "common": "Belarus",
+      "latlng": [
+        53,
+        28
+      ]
+    },
+    {
+      "common": "Latvia",
+      "latlng": [
+        57,
+        25
+      ]
+    },
+    {
+      "common": "Palau",
+      "latlng": [
+        7.5,
+        134.5
+      ]
+    },
+    {
+      "common": "Guadeloupe",
+      "latlng": [
+        16.25,
+        -61.583333
+      ]
+    },
+    {
+      "common": "Philippines",
+      "latlng": [
+        13,
+        122
+      ]
+    },
+    {
+      "common": "Gibraltar",
+      "latlng": [
+        36.13333333,
+        -5.35
+      ]
+    },
+    {
+      "common": "Denmark",
+      "latlng": [
+        56,
+        10
+      ]
+    },
+    {
+      "common": "Cameroon",
+      "latlng": [
+        6,
+        12
+      ]
+    },
+    {
+      "common": "Guinea",
+      "latlng": [
+        11,
+        -10
+      ]
+    },
+    {
+      "common": "Bahrain",
+      "latlng": [
+        26,
+        50.55
+      ]
+    },
+    {
+      "common": "Suriname",
+      "latlng": [
+        4,
+        -56
+      ]
+    },
+    {
+      "common": "DR Congo",
+      "latlng": [
+        0,
+        25
+      ]
+    },
+    {
+      "common": "Somalia",
+      "latlng": [
+        10,
+        49
+      ]
+    },
+    {
+      "common": "Czechia",
+      "latlng": [
+        49.75,
+        15.5
+      ]
+    },
+    {
+      "common": "New Caledonia",
+      "latlng": [
+        -21.5,
+        165.5
+      ]
+    },
+    {
+      "common": "Vanuatu",
+      "latlng": [
+        -16,
+        167
+      ]
+    },
+    {
+      "common": "Saint Helena, Ascension and Tristan da Cunha",
+      "latlng": [
+        -15.95,
+        -5.72
+      ]
+    },
+    {
+      "common": "Togo",
+      "latlng": [
+        8,
+        1.16666666
+      ]
+    },
+    {
+      "common": "British Virgin Islands",
+      "latlng": [
+        18.431383,
+        -64.62305
+      ]
+    },
+    {
+      "common": "Kenya",
+      "latlng": [
+        1,
+        38
+      ]
+    },
+    {
+      "common": "Niue",
+      "latlng": [
+        -19.03333333,
+        -169.86666666
+      ]
+    },
+    {
+      "common": "Heard Island and McDonald Islands",
+      "latlng": [
+        53.0818,
+        73.5042
+      ]
+    },
+    {
+      "common": "Rwanda",
+      "latlng": [
+        -2,
+        30
+      ]
+    },
+    {
+      "common": "Estonia",
+      "latlng": [
+        59,
+        26
+      ]
+    },
+    {
+      "common": "Romania",
+      "latlng": [
+        46,
+        25
+      ]
+    },
+    {
+      "common": "Trinidad and Tobago",
+      "latlng": [
+        10.6918,
+        -61.2225
+      ]
+    },
+    {
+      "common": "Guyana",
+      "latlng": [
+        5,
+        -59
+      ]
+    },
+    {
+      "common": "Timor-Leste",
+      "latlng": [
+        -8.83333333,
+        125.91666666
+      ]
+    },
+    {
+      "common": "Vietnam",
+      "latlng": [
+        16.16666666,
+        107.83333333
+      ]
+    },
+    {
+      "common": "Uruguay",
+      "latlng": [
+        -33,
+        -56
+      ]
+    },
+    {
+      "common": "Vatican City",
+      "latlng": [
+        41.9,
+        12.45
+      ]
+    },
+    {
+      "common": "Hong Kong",
+      "latlng": [
+        22.267,
+        114.188
+      ]
+    },
+    {
+      "common": "Austria",
+      "latlng": [
+        47.33333333,
+        13.33333333
+      ]
+    },
+    {
+      "common": "Antigua and Barbuda",
+      "latlng": [
+        17.05,
+        -61.8
+      ]
+    },
+    {
+      "common": "Turkmenistan",
+      "latlng": [
+        40,
+        60
+      ]
+    },
+    {
+      "common": "Mozambique",
+      "latlng": [
+        -18.25,
+        35
+      ]
+    },
+    {
+      "common": "Panama",
+      "latlng": [
+        9,
+        -80
+      ]
+    },
+    {
+      "common": "Micronesia",
+      "latlng": [
+        6.91666666,
+        158.25
+      ]
+    },
+    {
+      "common": "Ireland",
+      "latlng": [
+        53,
+        -8
+      ]
+    },
+    {
+      "common": "Curaçao",
+      "latlng": [
+        12.116667,
+        -68.933333
+      ]
+    },
+    {
+      "common": "French Guiana",
+      "latlng": [
+        4,
+        -53
+      ]
+    },
+    {
+      "common": "Norway",
+      "latlng": [
+        62,
+        10
+      ]
+    },
+    {
+      "common": "Åland Islands",
+      "latlng": [
+        60.116667,
+        19.9
+      ]
+    },
+    {
+      "common": "Central African Republic",
+      "latlng": [
+        7,
+        21
+      ]
+    },
+    {
+      "common": "Burkina Faso",
+      "latlng": [
+        13,
+        -2
+      ]
+    },
+    {
+      "common": "Eritrea",
+      "latlng": [
+        15,
+        39
+      ]
+    },
+    {
+      "common": "Tanzania",
+      "latlng": [
+        -6,
+        35
+      ]
+    },
+    {
+      "common": "South Korea",
+      "latlng": [
+        37,
+        127.5
+      ]
+    },
+    {
+      "common": "Jordan",
+      "latlng": [
+        31,
+        36
+      ]
+    },
+    {
+      "common": "Mauritania",
+      "latlng": [
+        20,
+        -12
+      ]
+    },
+    {
+      "common": "Lithuania",
+      "latlng": [
+        56,
+        24
+      ]
+    },
+    {
+      "common": "United States Minor Outlying Islands",
+      "latlng": [
+        19.3,
+        166.633333
+      ]
+    },
+    {
+      "common": "Slovakia",
+      "latlng": [
+        48.66666666,
+        19.5
+      ]
+    },
+    {
+      "common": "Angola",
+      "latlng": [
+        -12.5,
+        18.5
+      ]
+    },
+    {
+      "common": "Kazakhstan",
+      "latlng": [
+        48.0196,
+        66.9237
+      ]
+    },
+    {
+      "common": "Moldova",
+      "latlng": [
+        47,
+        29
+      ]
+    },
+    {
+      "common": "Mali",
+      "latlng": [
+        17,
+        -4
+      ]
+    },
+    {
+      "common": "Falkland Islands",
+      "latlng": [
+        -51.75,
+        -59
+      ]
+    },
+    {
+      "common": "Armenia",
+      "latlng": [
+        40,
+        45
+      ]
+    },
+    {
+      "common": "Samoa",
+      "latlng": [
+        -13.58333333,
+        -172.33333333
+      ]
+    },
+    {
+      "common": "Jersey",
+      "latlng": [
+        49.25,
+        -2.16666666
+      ]
+    },
+    {
+      "common": "Japan",
+      "latlng": [
+        36,
+        138
+      ]
+    },
+    {
+      "common": "Bolivia",
+      "latlng": [
+        -17,
+        -65
+      ]
+    },
+    {
+      "common": "Chile",
+      "latlng": [
+        -30,
+        -71
+      ]
+    },
+    {
+      "common": "United States",
+      "latlng": [
+        38,
+        -97
+      ]
+    },
+    {
+      "common": "Saint Vincent and the Grenadines",
+      "latlng": [
+        13.25,
+        -61.2
+      ]
+    },
+    {
+      "common": "Bermuda",
+      "latlng": [
+        32.33333333,
+        -64.75
+      ]
+    },
+    {
+      "common": "Seychelles",
+      "latlng": [
+        -4.58333333,
+        55.66666666
+      ]
+    },
+    {
+      "common": "British Indian Ocean Territory",
+      "latlng": [
+        -6,
+        71.5
+      ]
+    },
+    {
+      "common": "Guatemala",
+      "latlng": [
+        15.5,
+        -90.25
+      ]
+    },
+    {
+      "common": "Ecuador",
+      "latlng": [
+        -2,
+        -77.5
+      ]
+    },
+    {
+      "common": "Martinique",
+      "latlng": [
+        14.666667,
+        -61
+      ]
+    },
+    {
+      "common": "Tajikistan",
+      "latlng": [
+        39,
+        71
+      ]
+    },
+    {
+      "common": "Malta",
+      "latlng": [
+        35.9375,
+        14.3754
+      ]
+    },
+    {
+      "common": "Gambia",
+      "latlng": [
+        13.46666666,
+        -16.56666666
+      ]
+    },
+    {
+      "common": "Nigeria",
+      "latlng": [
+        10,
+        8
+      ]
+    },
+    {
+      "common": "Bahamas",
+      "latlng": [
+        25.0343,
+        -77.3963
+      ]
+    },
+    {
+      "common": "Kosovo",
+      "latlng": [
+        42.666667,
+        21.166667
+      ]
+    },
+    {
+      "common": "Kuwait",
+      "latlng": [
+        29.5,
+        45.75
+      ]
+    },
+    {
+      "common": "Maldives",
+      "latlng": [
+        3.25,
+        73
+      ]
+    },
+    {
+      "common": "South Sudan",
+      "latlng": [
+        7,
+        30
+      ]
+    },
+    {
+      "common": "Iran",
+      "latlng": [
+        32,
+        53
+      ]
+    },
+    {
+      "common": "Albania",
+      "latlng": [
+        41,
+        20
+      ]
+    },
+    {
+      "common": "Brazil",
+      "latlng": [
+        -10,
+        -55
+      ]
+    },
+    {
+      "common": "Serbia",
+      "latlng": [
+        44,
+        21
+      ]
+    },
+    {
+      "common": "Belize",
+      "latlng": [
+        17.25,
+        -88.75
+      ]
+    },
+    {
+      "common": "Myanmar",
+      "latlng": [
+        22,
+        98
+      ]
+    },
+    {
+      "common": "Bhutan",
+      "latlng": [
+        27.5,
+        90.5
+      ]
+    },
+    {
+      "common": "Venezuela",
+      "latlng": [
+        8,
+        -66
+      ]
+    },
+    {
+      "common": "Liberia",
+      "latlng": [
+        6.5,
+        -9.5
+      ]
+    },
+    {
+      "common": "Jamaica",
+      "latlng": [
+        18.25,
+        -77.5
+      ]
+    },
+    {
+      "common": "Poland",
+      "latlng": [
+        52,
+        20
+      ]
+    },
+    {
+      "common": "Cayman Islands",
+      "latlng": [
+        19.3133,
+        -81.2546
+      ]
+    },
+    {
+      "common": "Brunei",
+      "latlng": [
+        4.5,
+        114.66666666
+      ]
+    },
+    {
+      "common": "Comoros",
+      "latlng": [
+        -12.16666666,
+        44.25
+      ]
+    },
+    {
+      "common": "Guam",
+      "latlng": [
+        13.46666666,
+        144.78333333
+      ]
+    },
+    {
+      "common": "Tonga",
+      "latlng": [
+        -20,
+        -175
+      ]
+    },
+    {
+      "common": "Kiribati",
+      "latlng": [
+        1.41666666,
+        173
+      ]
+    },
+    {
+      "common": "Ghana",
+      "latlng": [
+        8,
+        -2
+      ]
+    },
+    {
+      "common": "Chad",
+      "latlng": [
+        15,
+        19
+      ]
+    },
+    {
+      "common": "Zimbabwe",
+      "latlng": [
+        -20,
+        30
+      ]
+    },
+    {
+      "common": "Saint Martin",
+      "latlng": [
+        18.0708,
+        63.0501
+      ]
+    },
+    {
+      "common": "Mongolia",
+      "latlng": [
+        46,
+        105
+      ]
+    },
+    {
+      "common": "Portugal",
+      "latlng": [
+        39.5,
+        -8
+      ]
+    },
+    {
+      "common": "American Samoa",
+      "latlng": [
+        -14.33333333,
+        -170
+      ]
+    },
+    {
+      "common": "Republic of the Congo",
+      "latlng": [
+        -1,
+        15
+      ]
+    },
+    {
+      "common": "Belgium",
+      "latlng": [
+        50.83333333,
+        4
+      ]
+    },
+    {
+      "common": "Israel",
+      "latlng": [
+        31.47,
+        35.13
+      ]
+    },
+    {
+      "common": "New Zealand",
+      "latlng": [
+        -41,
+        174
+      ]
+    },
+    {
+      "common": "Nicaragua",
+      "latlng": [
+        13,
+        -85
+      ]
+    },
+    {
+      "common": "Anguilla",
+      "latlng": [
+        18.25,
+        -63.16666666
+      ]
+    }
+  ]

@@ -25,7 +25,7 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
     if (!searchTerm) return countries;
 
   const filterCountry = countries.filter((country) =>
-    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+    country.common.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return filterCountry;
  
@@ -76,24 +76,24 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
             scrollbarWidth: "none",
           }}
         >
-          {countries && filteredCountries().map(({ name, latlng }, index) => {
+          {filteredCountries().map(({ common, latlng }, index) => {
             return (
               <div
                 key={index}
                 onClick={() => {
-                  buildLatitudeAndLongitude(latlng, name.common);
-                  setSelectedCountry(name.common);
+                  buildLatitudeAndLongitude(latlng, common);
+                  setSelectedCountry(common);
                 }}
                 className="bg-white m-0 flex justify-between items-center md:hover:bg-red-100 transition-all"
               >
                 <li
                   className={`${
-                    selectedCountry === name.common
+                    selectedCountry === common
                       ? "bg-blue-300"
                       : "bg-white/35"
                   } rounded-md text-center w-full m-0 p-2 border-[2px] border-red-100 `}
                 >
-                  {name?.common}
+                  {common}
                 </li>
               </div>
             );
