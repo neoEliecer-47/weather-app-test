@@ -33,9 +33,10 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
    useEffect(()=> {
      async function getCountriesAllowed() {
          try {
-          const response = await fetch('/api/countries')//calling to the server side (route handler) to get the countries allowed
-          const data = await response.json()
+          const res = await fetch('/api/countries')//calling to the server side (route handler) to get the countries allowed
+          const data = await res.json()
           setCountries(data)
+          console.log(data)
          } catch (error) {
           console.log(error)
          }
@@ -80,7 +81,7 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
             scrollbarWidth: "none",
           }}
         >
-          {countries.length > 0 && filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
+          {countries && filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}
