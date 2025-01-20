@@ -5,7 +5,10 @@ export async function GET(req: NextRequest) {
     //countries allowed
     
    try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
+    const response = await fetch("https://restcountries.com/v3.1/all",{
+        method: 'GET',
+        cache: 'no-store'
+    });
    
     if (!response)
         throw new Error(`The Request failed due to an issue in the external api`); //error handling
