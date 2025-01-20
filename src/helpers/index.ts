@@ -8,4 +8,4 @@ export function buildBackgroundWidgetColorName(color: string) {
   if (color === "gray") return "rgba(209,213,219,0.7)";
 }
 
-  //filter countries based on searchTerm
+  

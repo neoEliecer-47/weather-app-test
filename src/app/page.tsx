@@ -1,6 +1,5 @@
 import DropDownMenuCountries from "@/components/DropDownMenuCountries";
 import { fetchWeatherCountry } from "@/utils";
-import countriesAllowedData from "../mocks/countries.json";
 import { searchParamsProps } from "@/types";
 import TemperatureWidget from "@/components/weather-variables/TemperatureWidget";
 import WindWidget from "@/components/weather-variables/WindWidget";
@@ -22,7 +21,6 @@ export default async function Home({ searchParams }: searchParamsProps) {
     >
       <DropDownMenuCountries
         placeholder="Select country"
-        countries={countriesAllowedData}
       />
 
       <h1

@@ -1,17 +1,19 @@
 "use client";
 
 import { useClickOutsideDetector } from "@/hooks/useClickOutside";
-import { DropDownMenuCountriesProps } from "@/types";
-import { updateSearchParams } from "@/utils";
+import { countries, DropDownMenuCountriesProps } from "@/types";
+import { fetchCountriesAllowed, updateSearchParams } from "@/utils";
 import { useRouter } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
-const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountriesProps) => {
+const DropDownMenuCountries = ({ placeholder }: DropDownMenuCountriesProps) => {
   const countriesRef = useRef<HTMLUListElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [countries, setCountries] = useState<countries[]>([])
+  const [loading, setLoading] = useState(true)
   const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
   const router = useRouter();
 
@@ -21,14 +23,14 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
     router.push(newPathname);
   }
 
-   function filteredCountries() {//we ensure that countries is not gonna null when filtered so I pass it as argument
+    //filter countries based on searchTerm
+   function filterCountries(countries: countries[]) {//we ensure that countries is not gonna be null when filtered so I pass it as argument
     if (!searchTerm) return countries;
 
   const filterCountry = countries.filter((country) =>
-    country.common.toLowerCase().includes(searchTerm.toLowerCase())
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  return filterCountry;
- 
+    return filterCountry;
 
   }
 
@@ -38,6 +40,19 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
     setSearchTerm(sanitizedValue);
   }
 
+  useEffect(()=>{
+    async function getCountries() {
+      try {
+        const data = await fetchCountriesAllowed()//this function calls the server side route handler for countries allowed 
+        setCountries(data)
+        setLoading(false)
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getCountries()
+  }, [])
 
   useEffect(() => {
     if (isClickOutside) {
@@ -60,9 +75,9 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
         ref={dropMenuRef}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="capitalize hover:bg-white/65 relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
-          {placeholder}
-        </div>
+        <button disabled={loading} className="capitalize hover:bg-white/65 relative flex justify-center w-[12rem] text-[1rem] py-[10px] transition-all duration-300 ease-linear bg-gray-200 rounded-[5px]">
+          {loading ? 'loading countries...' : placeholder}
+        </button>
 
         <ul
           className={`max-h-[10rem] bg-transparent absolute m-auto w-[12rem] rounded-[0.5rem] transition-all duration-250 ease-linear z-[9999px] shadow-sm overflow-scroll overflow-x-hidden overflow-y-auto`}
@@ -76,24 +91,24 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
             scrollbarWidth: "none",
           }}
         >
-          {filteredCountries().map(({ common, latlng }, index) => {
+          {!loading && filterCountries(countries).map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}
                 onClick={() => {
-                  buildLatitudeAndLongitude(latlng, common);
-                  setSelectedCountry(common);
+                  buildLatitudeAndLongitude(latlng, name?.common);
+                  setSelectedCountry(name.common);
                 }}
                 className="bg-white m-0 flex justify-between items-center md:hover:bg-red-100 transition-all"
               >
                 <li
                   className={`${
-                    selectedCountry === common
+                    selectedCountry === name?.common
                       ? "bg-blue-300"
                       : "bg-white/35"
                   } rounded-md text-center w-full m-0 p-2 border-[2px] border-red-100 `}
                 >
-                  {common}
+                  {name?.common}
                 </li>
               </div>
             );

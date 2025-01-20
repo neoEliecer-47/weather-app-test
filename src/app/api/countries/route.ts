@@ -5,7 +5,7 @@ export async function GET() {
     //countries allowed
     
    try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
+    const response = await fetch("https://restcountries.com/v3.1/all?fields=name,latlng");
   
       const data = await response.json()
   
