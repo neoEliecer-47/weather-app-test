@@ -52,9 +52,7 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
 
 
   return (
-    <>
-    {countries && (
-      <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <input
         value={searchTerm}
         onChange={handleChange}
@@ -82,7 +80,7 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
             scrollbarWidth: "none",
           }}
         >
-          {filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
+          {countries.length > 0 && filteredCountries(countries, searchTerm).map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}
@@ -107,8 +105,6 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
         </ul>
       </section>
     </div>
-    )}
-    </>
   );
 };
 
