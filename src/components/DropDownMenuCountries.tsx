@@ -52,7 +52,9 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
 
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <>
+    {countries && (
+      <div className="flex flex-col justify-center items-center">
       <input
         value={searchTerm}
         onChange={handleChange}
@@ -105,6 +107,8 @@ const DropDownMenuCountries = ({ placeholder }: {placeholder: string}) => {
         </ul>
       </section>
     </div>
+    )}
+    </>
   );
 };
 
