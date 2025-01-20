@@ -4,7 +4,7 @@ import { useState } from "react";
 import WidgetWrapper from "../WidgetWrapper";
 import { useUpdateWidget } from "@/hooks/useUpdateWidget";
 import { CustomWidgetButton } from "../CustomWidgetButton";
-import Loader from "../Loader";
+
 import WidgetData from "../WidgetData";
 import imgTempeture from "../../../public/assets/temperature.png";
 import WidgetSwitchUnits from "../WidgetSwitchUnits";
@@ -16,13 +16,12 @@ type TemperatureWidgetProps = {
 const TemperatureWidget = ({ temperature }: TemperatureWidgetProps) => {
   const [widgetType, setWidgetType] = useState<string>("");
   const [fahUnit, setFahUnit] = useState<boolean>(false);
-  const { data, loading } = useUpdateWidget(widgetType, setWidgetType);//custom hook which make the call to the server side to get specific updated data
+  const { data, loading } = useUpdateWidget(widgetType, setWidgetType); //custom hook which make the call to the server side to get specific updated data
 
   function changeTempFahToCelcius() {
     // I do this calculation since the units from the api come in Fahrenheid units
     const tempString = widgetType ? data : temperature;
     const tempNumber = Number(tempString);
-
     const tempValueCelcius = String((((tempNumber - 32) * 5) / 9).toFixed(1));
     return tempValueCelcius;
   }

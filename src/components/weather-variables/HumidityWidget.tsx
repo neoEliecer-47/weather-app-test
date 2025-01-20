@@ -3,7 +3,6 @@
 import { useState } from "react";
 import WidgetWrapper from "../WidgetWrapper";
 import { CustomWidgetButton } from "../CustomWidgetButton";
-import Loader from "../Loader";
 import { useUpdateWidget } from "@/hooks/useUpdateWidget";
 import imgHumidity from "../../../public/assets/humidity.png";
 import WidgetData from "../WidgetData";

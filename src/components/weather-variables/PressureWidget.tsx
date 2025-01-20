@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CustomWidgetButton } from "../CustomWidgetButton";
-import Loader from "../Loader";
 import WidgetData from "../WidgetData";
 import WidgetWrapper from "../WidgetWrapper";
 import { useUpdateWidget } from "@/hooks/useUpdateWidget";

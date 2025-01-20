@@ -1,11 +1,9 @@
 "use client";
 
-import { updateWidgetVariable } from "@/utils";
 import WidgetWrapper from "../WidgetWrapper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useUpdateWidget } from "@/hooks/useUpdateWidget";
 import { CustomWidgetButton } from "../CustomWidgetButton";
-import Loader from "../Loader";
 import WidgetData from "../WidgetData";
 import imgWid from "../../../public/assets/wind.png";
 import WidgetSwitchUnits from "../WidgetSwitchUnits";
