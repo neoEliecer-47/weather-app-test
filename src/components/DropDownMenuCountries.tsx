@@ -32,8 +32,6 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
 
   }
 
-
-
   //this function sanitize the text before process it
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const sanitizedValue = event.target.value.replace(/[^a-z]/g, ""); //to only allow letters in the input
@@ -78,7 +76,7 @@ const DropDownMenuCountries = ({ placeholder, countries }: DropDownMenuCountries
             scrollbarWidth: "none",
           }}
         >
-          {filteredCountries().map(({ name, latlng }, index) => {
+          {countries && filteredCountries().map(({ name, latlng }, index) => {
             return (
               <div
                 key={index}
